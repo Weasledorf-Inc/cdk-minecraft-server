@@ -1,18 +1,25 @@
-const { AwsCdkConstructLibrary } = require('projen');
-const project = new AwsCdkConstructLibrary({
-  author: 'hasan aburayyan',
-  authorAddress: 'haburayyan@cas.org',
-  cdkVersion: '1.129.0',
+const { awscdk } = require('projen');
+
+// const cdkAlphaVersions = '2.0.0-alpha.11';
+// const cdkAlphaDependencies = [
+//   '@aws-cdk/aws-apigatewayv2-alpha',
+//   '@aws-cdk/aws-apigatewayv2-integrations-alpha',
+// ].map(x => `${x}@${cdkAlphaVersions}`);
+
+const project = new awscdk.AwsCdkConstructLibrary({
+  author: 'Hasan Abu-Rayyan',
+  authorAddress: 'hasanaburayyan21@gmail.com',
+  cdkVersion: '1.34.0',
   defaultReleaseBranch: 'main',
   name: 'minecraft-server-construct',
-  repositoryUrl: 'https://github.com/haburayyan/minecraft-server-construct.git',
-
-  // cdkDependencies: undefined,      /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
-  // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
-  // deps: [],                        /* Runtime dependencies of this module. */
-  // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],                     /* Build dependencies for this module. */
-  // packageName: undefined,          /* The "name" in package.json. */
-  // release: undefined,              /* Add release management to this project. */
+  repositoryUrl: 'https://github.com/hasanaburayyan/cdk-minecraft-server.git',
+  cdkDependencies: [
+    // 'aws-cdk-lib',
+    '@aws-cdk/core',
+    '@aws-cdk/aws-ec2',
+  ],
+  deps: [
+    // ...cdkAlphaDependencies,
+  ],
 });
 project.synth();
