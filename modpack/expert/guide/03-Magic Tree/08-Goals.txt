@@ -1,6 +1,0 @@
-§2§lCreative Pool
-§0And now... for the hardest item to create in Expert Mode at the time of release:
-
-[cpool]
-
-Good luck and have fun!
