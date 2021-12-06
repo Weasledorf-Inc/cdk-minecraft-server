@@ -6,6 +6,14 @@
       "type": "build"
     },
     {
+      "name": "@types/aws-lambda",
+      "type": "build"
+    },
+    {
+      "name": "@types/fs-extra",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -93,7 +101,42 @@
       "type": "build"
     },
     {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
       "name": "@aws-cdk/aws-ec2",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr-assets",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda-nodejs",
+      "version": "^1.34.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda-python",
       "version": "^1.34.0",
       "type": "peer"
     },
@@ -108,13 +151,60 @@
       "type": "peer"
     },
     {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-ec2",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr-assets",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecr",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda-nodejs",
+      "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda-python",
       "version": "^1.34.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
       "version": "^1.34.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-ec2",
+      "type": "runtime"
+    },
+    {
+      "name": "cdk-ecr-deployment",
+      "type": "runtime"
+    },
+    {
+      "name": "fs-extra",
       "type": "runtime"
     }
   ],

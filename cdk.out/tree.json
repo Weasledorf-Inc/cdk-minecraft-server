@@ -1,0 +1,427 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.134.0"
+        }
+      },
+      "test-mc-construct-stack": {
+        "id": "test-mc-construct-stack",
+        "path": "test-mc-construct-stack",
+        "children": {
+          "my-vpc": {
+            "id": "my-vpc",
+            "path": "test-mc-construct-stack/my-vpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "PublicSubnet3": {
+                "id": "PublicSubnet3",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet3",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "PublicSubnet4": {
+                "id": "PublicSubnet4",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet4",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "PublicSubnet5": {
+                "id": "PublicSubnet5",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet5",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "PublicSubnet6": {
+                "id": "PublicSubnet6",
+                "path": "test-mc-construct-stack/my-vpc/PublicSubnet6",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Resource",
+              "version": "1.134.0"
+            }
+          },
+          "test-mc-server": {
+            "id": "test-mc-server",
+            "path": "test-mc-construct-stack/test-mc-server",
+            "children": {
+              "mc-server-instance": {
+                "id": "mc-server-instance",
+                "path": "test-mc-construct-stack/test-mc-server/mc-server-instance",
+                "children": {
+                  "ec2-pull-ecr": {
+                    "id": "ec2-pull-ecr",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ec2.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnRole",
+                          "version": "1.134.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:GetDownloadUrlForLayer",
+                                        "ecr:BatchGetImage"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "testmcservermcserverinstanceecrrepoBC555D10",
+                                          "Arn"
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": "ecr:GetAuthorizationToken",
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "testmcservermcserverinstanceec2pullecrDefaultPolicy8E995AB8",
+                                "roles": [
+                                  {
+                                    "Ref": "testmcservermcserverinstanceec2pullecr94EC63A0"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                              "version": "1.134.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.Policy",
+                          "version": "1.134.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.Role",
+                      "version": "1.134.0"
+                    }
+                  },
+                  "default-security-group": {
+                    "id": "default-security-group",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/default-security-group",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/default-security-group/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "test-mc-construct-stack/test-mc-server/mc-server-instance/default-security-group",
+                            "groupName": "sec-group",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "securityGroupIngress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "ipProtocol": "tcp",
+                                "fromPort": 25565,
+                                "toPort": 25565,
+                                "description": "from 0.0.0.0/0:25565"
+                              },
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "ipProtocol": "udp",
+                                "fromPort": 25565,
+                                "toPort": 25565,
+                                "description": "from 0.0.0.0/0:UDP 25565"
+                              }
+                            ],
+                            "vpcId": "vpc-e85ac692"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                          "version": "1.134.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                      "version": "1.134.0"
+                    }
+                  },
+                  "server": {
+                    "id": "server",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/server",
+                    "children": {
+                      "InstanceProfile": {
+                        "id": "InstanceProfile",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/server/InstanceProfile",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                          "aws:cdk:cloudformation:props": {
+                            "roles": [
+                              {
+                                "Ref": "testmcservermcserverinstanceec2pullecr94EC63A0"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnInstanceProfile",
+                          "version": "1.134.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/server/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                          "aws:cdk:cloudformation:props": {
+                            "availabilityZone": "us-east-1a",
+                            "iamInstanceProfile": {
+                              "Ref": "testmcservermcserverinstanceserverInstanceProfile75C5CE10"
+                            },
+                            "imageId": {
+                              "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "instanceType": "c5a.large",
+                            "securityGroupIds": [
+                              {
+                                "Fn::GetAtt": [
+                                  "testmcservermcserverinstancedefaultsecuritygroup6D513840",
+                                  "GroupId"
+                                ]
+                              }
+                            ],
+                            "subnetId": "subnet-39feb365",
+                            "tags": [
+                              {
+                                "key": "Name",
+                                "value": "random-stuff"
+                              }
+                            ],
+                            "userData": {
+                              "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum install -y docker\nsudo service docker start\nsudo usermod -a -G docker ec2-user"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ec2.CfnInstance",
+                          "version": "1.134.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.Instance",
+                      "version": "1.134.0"
+                    }
+                  },
+                  "elastic-ip": {
+                    "id": "elastic-ip",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/elastic-ip",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "instanceId": {
+                          "Ref": "testmcservermcserverinstanceserverB349B796"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnEIP",
+                      "version": "1.134.0"
+                    }
+                  },
+                  "ecr-repo": {
+                    "id": "ecr-repo",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ecr-repo",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/ecr-repo/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ECR::Repository",
+                          "aws:cdk:cloudformation:props": {
+                            "repositoryName": "image-hub"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ecr.CfnRepository",
+                          "version": "1.134.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecr.Repository",
+                      "version": "1.134.0"
+                    }
+                  },
+                  "docker-image": {
+                    "id": "docker-image",
+                    "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/docker-image",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/docker-image/Staging",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.AssetStaging",
+                          "version": "1.134.0"
+                        }
+                      },
+                      "Repository": {
+                        "id": "Repository",
+                        "path": "test-mc-construct-stack/test-mc-server/mc-server-instance/docker-image/Repository",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-ecr.RepositoryBase",
+                          "version": "1.134.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ecr-assets.DockerImageAsset",
+                      "version": "1.134.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.134.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.134.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "test-mc-construct-stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnParameter",
+              "version": "1.134.0"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "test-mc-construct-stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Resource",
+              "version": "1.134.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "test-mc-construct-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "test-mc-construct-stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.134.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.134.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.134.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.134.0"
+    }
+  }
+}

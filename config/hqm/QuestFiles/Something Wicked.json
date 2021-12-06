@@ -1,0 +1,1695 @@
+{
+  "name": "Something Wicked",
+  "description": "Witchery",
+  "quests": [
+    {
+      "name": "Breathe it In",
+      "description": "Once you have the Witches Oven, you need some Clay Jars to capture the fumes.",
+      "x": 23,
+      "y": 12,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 31
+      },
+      "prerequisites": [
+        "{Sufficiently Advanced Tech}[Toil and Trouble]"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get some Clay Jars",
+          "longDescription": "Clay Jars go in the bottom middle slot of the Witches Oven, and get used up when a recipe that uses them is used.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 27
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get your first fumes",
+          "longDescription": "These fumes require the vanilla saplings only.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 31
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 32
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 33
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "My Beautiful Creations",
+      "description": "The first thing you will craft with your fumes will be Mutandis. This can be used on any vanilla or Witchery plants to mutate them into others. This is the only way to get certain plants.",
+      "x": 51,
+      "y": 12,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 14
+      },
+      "prerequisites": [
+        "Breathe it In"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Witches\u0027 Cauldron",
+          "longDescription": "The Witches\u0027 Cauldron is where certain items are created. Right-click a vanilla Cauldron with Anointing Paste to convert it to a Witches\u0027 Cauldron. Fill the Witches\u0027 Cauldron with 3 buckets of water while bringing it to a boil to prepare it.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 153
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make some Mutandis",
+          "longDescription": "Use Mutandis like you would Bone Meal to mutate the plant into another kind.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 14
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get the major saplings",
+          "longDescription": "These trees can only be acquired through mutating. You can make tree farms out of them once you have the first saplings however.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:witchsapling"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:witchsapling",
+                "damage": 1
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:witchsapling",
+                "damage": 2
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "witchery:witchsapling",
+          "amount": 3
+        },
+        {
+          "id": "witchery:witchsapling",
+          "damage": 1,
+          "amount": 3
+        },
+        {
+          "id": "witchery:witchsapling",
+          "damage": 2,
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "That New Fume Smell",
+      "description": "Witchery saplings can also be burned in the Witches Oven as well.",
+      "x": 81,
+      "y": 12,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 34
+      },
+      "prerequisites": [
+        "My Beautiful Creations"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get the new fumes",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 34
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 35
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 36
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "When the Real Fun Starts",
+      "description": "The next step in your journey will need the Distillery, which is used to further refine your materials. However, the the Distillery will need some power, which is provided by the Altar. The Altar\u0027s power capacity rises based on the amount of plant life that is around it. You can also place things on the altar itself, like the Chalice and Candelabra.",
+      "x": 108,
+      "y": 12,
+      "icon": {
+        "id": "witchery:distilleryidle"
+      },
+      "prerequisites": [
+        "That New Fume Smell",
+        "{Sufficiently Advanced Tech}[Moonshine and Sunshine]"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Altar",
+          "longDescription": "The Altar is a 3x2x1 multiblock. You can upgrade its maximum power and its recharge rate, as well as its power distribution range, by placing several blocks and items around the Altar. See the Witchery wiki for more details.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:altar"
+              },
+              "required": 6,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Distillery",
+          "longDescription": "The Distillery uses Altar energy to run, so it must be placed within 14 blocks (16 with an Arthana) of the Altar. It also requires Clay Jars to run. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:distilleryidle"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Looting",
+      "description": "The Arthana is used to collect special ingredients from mobs. Killing mobs with it will give an increased chance of special drops, like Tongue of Dog and Wool of Bat. Undead killed with the Arthana also have a chance of dropping Spectral Dust.",
+      "x": 23,
+      "y": 69,
+      "icon": {
+        "id": "witchery:arthana"
+      },
+      "prerequisites": [
+        "{Sufficiently Advanced Tech}[Toil and Trouble]"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make an Arthana",
+          "longDescription": "The Arthana can also be placed on the Altar by sneak right-clicking the top side with it. This increases the Altar\u0027s range by 2 blocks, to a 16 block radius.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:arthana"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Squared Circle",
+      "description": "Circle magic is a form of magic where you cast magical rites based on Ritual Chalk. Most rites require altar power. All of the rites you can cast and their costs are detailed in the book \"Witchcraft: Circle Magic\".",
+      "x": 158,
+      "y": 56,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 48
+      },
+      "prerequisites": [
+        "When the Real Fun Starts"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Chalk",
+          "longDescription": "The Golden Chalk is the centerpiece of the ritual circles. To begin a ritual, right-click on the Golden Chalk (assuming that the other chalk is correct for the ritual you wish to do).",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:chalkritual"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:chalkotherwhere"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:chalkinfernal"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:chalkheart"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "witchery:ingredient",
+          "damage": 48
+        }
+      ]
+    },
+    {
+      "name": "Witch\u0027s Battery",
+      "description": "The Attuned Stone can be charged for use in Circle Magics.",
+      "x": 140,
+      "y": 118,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 11
+      },
+      "prerequisites": [
+        "Squared Circle"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Charge an Attuned Stone",
+          "longDescription": "Attuned Stones are charged in the Rite of Charging.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 11
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Portable Circles",
+      "description": "The Circle Talisman can be used to pick up and place down Ritual Circles without having to place/break every single piece. ",
+      "x": 176,
+      "y": 117,
+      "icon": {
+        "id": "witchery:circletalisman"
+      },
+      "prerequisites": [
+        "Squared Circle"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Circle Talisman",
+          "longDescription": "To assign the Circle Talisman, use it in a Ritual of Binding (the Circle Talisman and 1 Redstone dust).",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:circletalisman"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deal With the Devil",
+      "description": "One of the Rites of Summoning will bring forth a Demon. Demons are hostile monsters, but you can trade with them like Villagers to get certain items, like Demon Hearts. Demon Hearts also drop from killing them.",
+      "x": 206,
+      "y": 99,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 23
+      },
+      "prerequisites": [
+        "Squared Circle"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Acquire a Demon Heart",
+          "longDescription": "The Devil\u0027s Tongue Charm makes Demons less likely to attack the player, while also giving them better prices. Each demonic trade will damage the Charm, which has 10 uses.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 23
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Occult Club",
+      "description": "Going into the future, you may need a Coven to perform certain rituals. A Coven is made of Coven Witches found through out the world. A Coven Witch will refuse to talk to players that do not have a familiar bound to them. To summon the Coven, right-click the Golden Chalk with the Seer Stone.",
+      "x": 271,
+      "y": 99,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 94
+      },
+      "prerequisites": [
+        "Unfamiliar Familiars"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Seer Stone",
+          "longDescription": "Sneak right-clicking a Seer Stone will show information about the player. It will show if they can manifest from the Spirit World, their familiar, amount of witches in their coven, known Mystic Branch spells, bottling skill, and active curses.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 94
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "It\u0027s LeviOsa",
+      "description": "The Mystic Branch is essentially a magic wand from Harry Potter. It lets you cast 25 spells total by swishing and flicking your Mystic Branch in specific patterns. The Mystic Branch is created by infusing an Ent Twig with Mystic Unguent.",
+      "x": 238,
+      "y": 125,
+      "icon": {
+        "id": "witchery:mysticbranch"
+      },
+      "prerequisites": [
+        "Deal With the Devil"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Mystic Branch",
+          "longDescription": "Only players that have successfully done a Rite of Infusion on themselves can use the Mystic Branch. Certain symbols may be inaccessible depending on the type of infusion the player has.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mysticbranch"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "witchery:ingredient",
+          "damage": 48,
+          "nbt": "{CurrentPage:62}"
+        }
+      ]
+    },
+    {
+      "name": "Smells Good",
+      "description": "The Kettle is used to craft similar to Thaumcraft\u0027s Crucible. Set a fire underneath it (preferably using Netherrack), give it some water, and throw in the ingredients. Be extremely careful that you put in the correct ingredients, as they cannot be gotten back if you make a mistake, and some recipes are incredibly complicated. If the Kettle starts emitting white swirls and making noises, the brew is ready to take out. Right click with an empty bottle to bottle it.",
+      "x": 81,
+      "y": 42,
+      "icon": {
+        "id": "witchery:kettle"
+      },
+      "prerequisites": [
+        "That New Fume Smell"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Kettle",
+          "longDescription": "You can have a chance of getting extra brews out of the Kettle by wearing Necromancer Robes, Witches Robes, or a Witches Hat or having a Toad familiar.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:kettle"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "witchery:ingredient",
+          "damage": 49
+        }
+      ]
+    },
+    {
+      "name": "You Spin Me Right Round",
+      "description": "The Spinning Wheel uses Altar power and ingrediants to create magical strings. The most common magical string made in the Spinning Wheel is Golden Thread.",
+      "x": 82,
+      "y": 98,
+      "icon": {
+        "id": "witchery:spinningwheel"
+      },
+      "prerequisites": [
+        "That New Fume Smell"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make a Spinning Wheel",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:spinningwheel"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Looking the Part",
+      "description": "Witches Robes have the same armor rating as a Leather Chestplate, and can be dyed like them as well. The same stands for the Witches Hat as well. Wearing either will increase the chance to get an extra brew. Wearing both increases the chance more. Creepers will ignore players wearing the Witches Robes, for the most part. ",
+      "x": 65,
+      "y": 121,
+      "icon": {
+        "id": "witchery:witchhat"
+      },
+      "prerequisites": [
+        "You Spin Me Right Round"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make the Witches uniform",
+          "longDescription": "What\u0027s the point of being a witch if you don\u0027t get to wear a pointy hat?",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:witchrobe"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:witchhat"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Imagination Nation",
+      "description": "The Spirit World is a dimension nearly identical to the Overworld. However, there are some very important differences. Dreams are the only place where Wispy Cotton, Disturbed Cotton, and Mellifluous Hunger can be collected. However, the Spirit World has no Endermen and it is impossible to operate Circle Magics there. The player will essentially be starting from scratch in the Spirit World, as no player-made things copy over from the Overworld. For this reason, it\u0027s best to sleep somewhere that did not originally have blocks, else you may suffocate.",
+      "x": 96,
+      "y": 121,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 6
+      },
+      "prerequisites": [
+        "You Spin Me Right Round"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Prepare to sleep",
+          "longDescription": "You can force yourself to go there through the Brew of Sleeping. It is nearly guaranteed that using the Brew of Sleeping alone will send you into nightmares, where you will be attacked by dangerous Nightmare monsters that drop Mellifluous Hunger when killed, but are quickly replaced. You can decrease the chance of a nightmare using the Dream Weaver of Nightmares nearby their sleeping body. A witch will return to their body from the Spirit World when they die there, or by using an Icy Needle. Gear from the Spirit World and Overworld are separate - that is, you cannot bring or remove most objects from the Spirit World. Wispy Cotton, Disturbed Cotton, and Mellifluous Hunger will be taken with the player when they awaken, while Icy Needles can be taken with them into the dream. You can intensify a nightmare by sleeping near to a placed Demon Heart, which will cause Demons to spawn alongside Nightmares.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 95
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 6
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "witchery:ingredient",
+          "damage": 78,
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Daydreaming",
+      "description": "It is possible for a sleeping Witch to travel from the Spirit World to the Overworld.",
+      "x": 80,
+      "y": 145,
+      "icon": {
+        "id": "minecraft:clock"
+      },
+      "prerequisites": [
+        "Imagination Nation"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Create Spirit Portal",
+          "longDescription": "A Spirit Portal can only be created in the Spirit World. It can be used by witches that have used the Rite of Manifestation, to pass back into the real world as a ghost for a short time. When the player returns to the Spirit World, they will drop everything in their inventory, save Icy Needles. A Spirit portal is made with a 4x4 ring of snow blocks (the corners can be missed) in the same way as a nether portal is made (only not so tall). The portal is ignited by placing Flowing Spirit on its base. This can be done by using a Brew of Flowing Spirit or by using a Bucket of Flowing Spirit.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:snow"
+              },
+              "required": 8,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Perform Rite of Manifestation",
+          "longDescription": "If a player that has undergone this rite passes though a portal they will manifest as a ghostly figure in the real world for a limited time. When this time expires they will return to the spirit world. The duration is 2.5 minutes, although this increases by 25 seconds for each Witch in the players coven. You need the smallest circle of Otherwhere Chalk. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 66
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 103
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 64
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:golden_pickaxe"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:arthana"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:gunpowder"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Playing with Dolls",
+      "description": "Poppets can be used to harm your enemies or protect yourself. For a poppet to work, it must be bound using a Taglock Kit. Taglock kits are bound by clicking on a player or the Bed they have slept in last.",
+      "x": 82,
+      "y": 70,
+      "icon": {
+        "id": "witchery:poppet",
+        "nbt": "{WITCDamage:0}"
+      },
+      "prerequisites": [
+        "That New Fume Smell"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Poppet",
+          "longDescription": "There are 11 Poppet types, almost all of which are defensive. Poppets can be used to give protection against drowning, hunger, fire, falling, and even death itself!",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:poppet",
+                "nbt": "{WITCDamage:0}"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:taglockkit"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Poppet Shelf",
+          "longDescription": "Poppets placed on a poppet shelf will act like they are in your inventory continuing the protect you no matter how far off you wander. Know that a Poppet Shelf Compass can be crafted to find a player\u0027s Poppet Shelf.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:poppetshelf"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fire and Fetishes",
+      "description": "The Brazier is used to perform conjuration magics. Place it down within range of an Altar, give it the correct ingredients, and light it with a Flint and Steel. ",
+      "x": 136,
+      "y": 168,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 127
+      },
+      "prerequisites": [
+        "Soul Cairn"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Brazier",
+          "longDescription": "The Necromantic Stone is created using the Rite of Necromancy.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:brazier"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Spectral Stone",
+          "longDescription": "Safari Nets do not work on creatures summoned with a Brazier, so we have to use these instead. The Spectral Stone is created with a Rite of Necromancy, and the creatures are bound to it with a Rite of Binding.",
+          "items": []
+        }
+      ],
+      "reward": [
+        {
+          "id": "witchery:ingredient",
+          "damage": 127
+        }
+      ]
+    },
+    {
+      "name": "Ultimate Undead Power",
+      "description": "Necromancer Robes with cause most undead to ignore the wearer. The Alluring Skull, when activated with a Necromantic Stone, will draw undead to it, unless they have something more interesting nearby, such as a player.",
+      "x": 110,
+      "y": 168,
+      "icon": {
+        "id": "witchery:alluringskull"
+      },
+      "prerequisites": [
+        "Soul Cairn"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Necromancer Robes",
+          "longDescription": "The Necromancer\u0027s Robes will also increase the chance of an extra necromantic brew.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:necromancerrobe"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make an Alluring Skull",
+          "longDescription": "The Alluring Skull is turned on by right-clicking with a Necromantic Stone. Right-clicking an activated Alluring Skull with a Necromantic Stone again will break the Skull, dropping it as an item.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:alluringskull"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unfamiliar Familiars",
+      "description": "Familiars are supernatural mobs that are bound to a witch (or warlock) that help increase their abilities. The three types of familiar are Cats, Owls, and Toads. Cat familiars enhance their master\u0027s ability to cast and remove curses - allowing them to use the Curse of Corrupt Poppet - as well as allowing them to create the Brew of Cursed Leaping. Owl familiars allow for easier use of the Enchanted Broom, as well as allow them to create the Brew of Bodega. Toad Familiars enhances their master\u0027s brewing capabilities, giving them a chance to get an extra brew, increasing the potency of potions drunk, and allowing them to prepare a Brew of the Frog\u0027s Tongue. In the event of a familiar\u0027s death, a witch can resurrect it with a Rite of Summoning. A familiar dies when its master dies.",
+      "x": 249,
+      "y": 99,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 89
+      },
+      "prerequisites": [
+        "Deal With the Devil"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Critter Snares",
+          "longDescription": "Four Critter Snares are created by placing a spider web over still water and getting a zombie to be trapped in the web. The web must be surrounding on four sides by Alder Saplings. Use a Mutating Sprig on the spider web to mutate the saplings into Critter Snares. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:crittersnare"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make Grasspers",
+          "longDescription": "Four Grassper plants are created by placing a chest over still water and surrounding its four sides with tall grass. Using a Mutating Sprig on the chest will cause the tall grass to be mutated into Grassper plants (the chest will be consumed).",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:grassper"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Mutate Owls",
+          "longDescription": "Owls are created by mutating a wolf (or dog) with a bat. Catch 2 to 4 bats using a Critter Snare. Place a spider web above a still water block and trap a wolf (or dog) in the spider web. Surround the web on 2 - 4 sides with Critter Snare plants containing a trapped bat. Place Grassper plants on the diagonal corners of the web. Place a charged attuned stone in one of the Grasspers and Mutandis Extremis in the other three. Finally, use a mutating sprig on the web, an Owl will be created for each trapped bat (so 2 - 4). It is probably best to do this, in an enclosed space so they don\u0027t just fly off before they can be tamed! Owls can be tamed and bred using Raw Porkchops or Raw Beef.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:crittersnare",
+                "damage": 1
+              },
+              "required": 2,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:grassper"
+              },
+              "required": 4,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:web"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 15
+              },
+              "required": 3,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 11
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Mutate Toads",
+          "longDescription": "Toads are created by mutating an ocelots (or cat) and a small slime. Catch 2 to 4 small slimes using a Critter Snare. Place a spider web above a still water block and trap an ocelot (or cat) in the spider web. Surround the web on 2 - 4 sides with Critter Snare plants containing a trapped small slime. Place Grassper plants on the diagonal corners of the web. Place a charged attuned stone in one of the Grasspers and Mutandis Extremis in the other three. Finally, use a mutating sprig on the web, a toad will be created for each trapped slime (so 2 - 4). It is probably best to do this in an enclosed space so they don\u0027t just hop away before they can be tamed!",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:crittersnare",
+                "damage": 3
+              },
+              "required": 2,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:grassper"
+              },
+              "required": 4,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:web"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 15
+              },
+              "required": 3,
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 11
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Traitor",
+      "description": "Witch Hunter Armor offers the same protection as leather armor but is much more durable. It also has several protections against magic. There is a 25% chance to mitigate general magical damage, 25% chance to mitigate the effects of a Voodoo Poppet, 90% chance to mitigate the Curse of Waking Nightmare, 90% chance to mitigate the Curse of Misfortune, 90% chance to resist being summoned with a Rite of Transposition, and a 100% chance to mitigate the effects of a Vampiric Poppet. ",
+      "x": 215,
+      "y": 20,
+      "icon": {
+        "id": "witchery:hunterhat"
+      },
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make Witch Hunter\u0027s Armor",
+          "longDescription": "The Witch Hunter Crossbow Pistol has several types of ammo. Basic Bolts, which don\u0027t do anything special, Splitting Bolts, which split into 3 Bolts that each do half damage, Bone Bolts, which does 50% more damage to undead and Demons, Nullifying Bolts, which drain 1/3 of the target\u0027s magical power if the user is wearing full Witch Hunter armor, and Silver Bolts, which do double damage to Werewolves and ignore their damage resistance.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:hunterhat"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:huntercoat"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:hunterlegs"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:hunterboots"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:handbow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Vampire Diaries",
+      "description": "Witchery allows the player to become a Vampire, which gives several buffs but several nerfs as well. Vampires will be severely harmed by the sun, they cannot approach Garlic Garlands, and are not protected by Death Protection or Vampiric Poppets. However, vampires also get several powers as they grow stronger. They are immune to poison, they do not lose hunger - instead, they drink blood from Villagers or other mobs. Most impotant of all, a vampire cannot be killed by anything other than fire, certain bosses, and a small array of other things. Werewolves can become vampires as well. Hybrids cannot use vampire abilities while in wolf or wolfman forms, they cannot regain hunger by feeding as a wolf, they remain weak to silver, and their maximum blood storage is about a third of a pure vampire\u0027s.",
+      "x": 243,
+      "y": 20,
+      "icon": {
+        "id": "witchery:vampirebook"
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Observations of an Immortal",
+          "longDescription": "Observations of an Immortal is a book that you can find in chests or craft. When crafted with Torn Pages, more pages are added to the book. These pages describe what steps must be taken to become a Vampire.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:vampirebook",
+                "damage": 9
+              },
+              "precision": "FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 1 Vampire",
+          "longDescription": "To begin, you need to perform the Creatures of the Night ritual. This is done by placing a Skull on the ground, place 8 Redstone around it, and then place another circle of 24 String around that with 4 Torches in the corners. With an empty Glass Goblet in your inventory, kill a Chicken using a Boline on top of the Skull, which will fill the Glass Goblet with its blood. Use the filled Glass Goblet on the Skull\u0027s face to summon Ellie. Bring Ellie to the Nether, and push her into the main Lava pits. Ellie will transform into Lilith, and begin to attack. Defeat her, and then when she asks, right-click her with the empty Glass Goblet to fill it with her blood. Drink that to become a level 1 vampire. Level 1 vampires have the ability to sense the amount of blood a mob has, and to drink it. Sleeping Villagers will not notice when their blood is being drained. Be careful when drinking a Villager\u0027s blood, if you start draining the second blood drop, you will harm the Villager, which will prompt any guards or Iron Golems to attack. Select the power by scrolling towards it, as if it was an item in your hotbar.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:skull"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:redstone"
+              },
+              "required": 8
+            },
+            {
+              "item": {
+                "id": "minecraft:string"
+              },
+              "required": 24
+            },
+            {
+              "item": {
+                "id": "minecraft:torch"
+              },
+              "required": 4
+            },
+            {
+              "item": {
+                "id": "witchery:glassgoblet"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:boline"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 2 Vampire",
+          "longDescription": "To continue to the next level, simply fill up your blood storage (the drops of blood on the far left of the gui). This will give the vampire the Transfix and Night Vision abilities. Transfix a Villager to prevent it from moving or noticing it is being drained. Sneak right-click with the ability to toggle Night Vision. These abilities use blood. This also gives the vampire another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:cobblestone"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 3 Vampire",
+          "longDescription": "To reach Level 3, the player must drink more than half the blood of 5 Villagers. This gives the vampire the Knockback ability, a passive power that makes barehanded punches have more knockback than before. Also, they have another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:cobblestone"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 4 Vampire",
+          "longDescription": "To reach Level 4, the vampire must go through 4 entire days in a row without sleeping or dying. Level 4 vampires are given the Speed ability. Right-click with it to give 10 seconds of Jump Boost II and Speed II. The vampire also gets another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:cobblestone"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 5 Vampire",
+          "longDescription": "To reach Level 5, the vampire must burn themselves 10 times with Sun Grenades. Sun Grenades are created by putting a Quartz Sphere into a Sun Collector and allowing it to soak in the sun from dawn to noon it will be charged. The Sun Collector must be placed next to a Daylight Sensor with direct vision to the sun as well. Level 5 vampires have the passive ability to resist the sun for a time. Before level 5, vampires die instantly when it is hit by natural sunlight. After Level 5, they have a couple seconds to scramble for shade before meeting their dooms. Level 5 vampires also get another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:sungrenade"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "KILL",
+          "description": "Level 6 Vampire",
+          "longDescription": "To reach Level 6, the vampire must kill 20 Blazes. This will give them the passive ability to smash stone with their bare fists while sneaking at the cost of blood. Level 6 vampires also get another drop of blood storage.",
+          "mobs": [
+            {
+              "name": "Kill 20 Blazes",
+              "icon": {
+                "id": "minecraft:blaze_rod"
+              },
+              "mob": "Blaze",
+              "kills": 20,
+              "exact": false
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 7 Vampire",
+          "longDescription": "To reach Level 7, the vampire once again has to perform the Creatures of the Night ritual. This time, however, give Lilith a Poppy instead of the Glass Goblet. A level 7 vampire has the ability to turn into a swarm of bats and fly at the cost of blood. Level 7 vampires also get another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:red_flower"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 8 Vampire",
+          "longDescription": "To reach Level 8, use Bat Form to fly from one village to another. Level 8 vampires enhances the Transfix ability into the Mesmerize ability, which causes Villagers to follow the vampire. The vampire also gets another drop of blood storage.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:cobblestone"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 9 Vampire",
+          "longDescription": "To reach Level 9, vampires must trap 5 Villagers into iron cages and drain their blood to about half. The first level of the cage is 8 Iron Bars, the second has 7 (essentially a window on one side), the third has 8 again, and then the top layer has 9 Wooden Planks. Level 9 vampires have the ability to convert Villagers into vampires. Fill up a Glass Goblet with your blood (by holding right-click on it), then feed it to a Mesmerized Villager that has no blood, while a Coffin is within 4 blocks. Be extremely careful not to kill the Villager while doing this, you may have to heal it with potions. You can do the same with other non-vampire players.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:iron_bars"
+              },
+              "required": 23
+            },
+            {
+              "item": {
+                "id": "minecraft:planks"
+              },
+              "required": 9
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 10 Vampire",
+          "longDescription": "To reach Level 10, the final level, the vampire must create a vampire out of a Villager. Level 10 vampires have 3 options of Blood Power they can use. The Blood Powers are decided using the Blood Crucible. The Blood Crucible is filled by Vampire Villagers periodically, and then items can be thrown in to decide the Blood Power. The Blood Crucible must be placed near the Coffin that the Vampire Villager was made near. The first power, Call Storm, calls a storm to hide the sun. It is chosen by throwing a Water Artichoke Globe into the Blood Crucible. The second Blood Power, Teleport, allows the vampire to instantly travel to either their spawn point, or the nearest village if they are already at their spawn. Select Teleport by throwing a Bone into a full Blood Crucible. The third Blood Power, Bat Swarm, spawns a swarm of bats to attack whatever entity the vampire is looking at. It is selected by throwing Wool of Bat into a full Blood Crucible. Each Blood Power has 5 charges before it must be chosen again.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:bloodcrucible"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Better Burning",
+      "description": "The Fume Funnel is an upgrade to the Witches Oven. Place it to the  left, right, or top of the Witches Oven to improve it.",
+      "x": 23,
+      "y": 41,
+      "icon": {
+        "id": "witchery:fumefunnel"
+      },
+      "prerequisites": [
+        "{Sufficiently Advanced Tech}[Toil and Trouble]"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Fume Funnel",
+          "longDescription": "The Fume Funnels on the sides will each improve the speed by 10% and increase the chance of a fume byproduct by 25%. The Fume Funnel on top will only increase the speed, however. Fume Funnels can be shared by multiple Witches Ovens.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:fumefunnel"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soul Cairn",
+      "description": "A Necromantic Stone allows its user to force raised undead creatures to attack whatever it is used on. The Necromantic Stone is created using the Rite of Necromancy.",
+      "x": 122,
+      "y": 146,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 64
+      },
+      "prerequisites": [
+        "Witch\u0027s Battery"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Necromantic Stone",
+          "longDescription": "To use the Stone, first raise some undead using a Brew of Raising. Then equip the stone and use it at range on a target player or creature. The raised undead will begin attacking the unfortunate creature. This stone does not work on undead creatures that the wielder has not summoned! If the stone is pointed at a block and used, raised undead will move to that block.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 64
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Firebolt",
+      "description": "The Enchanted Broom is one of the forms of flight that Witchery adds. Fly by pointing your mouse towards your destination and holding forward. Having an Owl familiar gives you more agility, allowing you to strafe and accelerate faster. The Enchanted Broom is created by infusing a Broom with Flying Ointment.",
+      "x": 206,
+      "y": 144,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 9
+      },
+      "prerequisites": [
+        "Deal With the Devil"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make an Enchanted Broom",
+          "longDescription": "You can name it in an Anvil and color it by clicking with dyes. Additionally, Brooms clean up Ritual Chalks much faster than other tools.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 9
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S.P.T to A.P.W.B.D",
+      "description": "The Crystal Ball has many uses. Right-clicking with a Taglock bound to another player will allow you to see through their eyes, so long as they are within 100-150 blocks. Right-clicking holding your own Taglock will show you an increasingly high bird\u0027s eye view of themselves. Holding a Bound Waystone will allow the witch to view the area around the waystone from an increasingly wide bird\u0027s eye perspective, so long as that location is within 100-150 blocks. The Crystal Ball is created by infusing a Quartz Sphere with a Gold Ingot and Happenstance Oil.",
+      "x": 227,
+      "y": 144,
+      "icon": {
+        "id": "witchery:crystalball"
+      },
+      "prerequisites": [
+        "Deal With the Devil"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Crystal Ball",
+          "longDescription": "The crystal ball may also be used without a Taglock Kit to glimpse into the future of the player. To predict the future, a crystal ball requires power from an altar. Only people who have made a crystal ball will be able to use one to predict the future. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:crystalball"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Yaga\u0027s Moving Castle",
+      "description": "Using the Crystal Ball has a chance of summoning Baba Yaga. It\u0027s possible for her to be intrigued or upset by the player. If she is intrigued, she will soon spawn near the player and spawn some items for them. If she is upset, either by the Crystal Ball or by being attacked, she will attack. She will attack with potions and reflect projectile attacks.",
+      "x": 238,
+      "y": 163,
+      "icon": {
+        "id": "witchery:babashat"
+      },
+      "prerequisites": [
+        "S.P.T to A.P.W.B.D"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Claim Baba Yaga\u0027s Hat",
+          "longDescription": "Baba Yaga drops several items, most importantly her hat. Baba Yaga\u0027s Hat adds a 25% chance of a second brew, and a 25% chance of a third brew. If worn by a player that\u0027s been infused, the hat has a chance of teleporting the player instead of taking a hit during combat. You can also dye the hat, but it has a small visual effect.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:babashat"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amoral Magician",
+      "description": "While on your travels, you may have found the green Hobgoblins. While non-magic users may not have any interest in them, the less moral magic user may.",
+      "x": 289,
+      "y": 191,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 149
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Gather Koboldite Dust",
+          "longDescription": "Sure, you can trade with a Hobgoblin, but have you seen their prices? It\u0027s far more efficient to just turn them introduce them to the wonders of the slave trade! Use a Lead on one, attatch it to a Fence, and toss it a pickaxe! It will start mining, and has a chance of finding some Koboldite Dust! However, it will not mine AND pick up items, so bring it a friend to pick the items up instead. Put a chest nearby for them to empty into.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 148
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Trade for Koboldite Ingots",
+          "longDescription": "Unfortunately, you cannot force a Hobgoblin to refine the Koboldite. Instead, you have to trade for it. Find a Hobgoblin willing to trade Koboldite Dust into Koboldite Nuggets, and Koboldite Nuggets into Koboldite Ingots. It is highly recommended to use your first Koboldite Ingots on a Koboldite Pickaxe. Hobgoblins mining with these dig extremely fast, automatically smelt ores, and have an increased chance of finding Koboldite Dust!",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 150
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "What is a King to a God",
+      "description": "Hobgoblins can be tricked into worshipping a player instead of their own gods. This can recharge the infusion required to use the Mystic Branch, as well as allowing them to draw their symbols larger for larger effects. More followers makes it more likely to offend Mog and Gulg, the patron god of the Hobgoblins.",
+      "x": 289,
+      "y": 159,
+      "icon": {
+        "id": "witchery:statueofworship"
+      },
+      "prerequisites": [
+        "Amoral Magician"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make and Bind Statue",
+          "longDescription": "Use the Rite of Binding to bind the Statue of Hobgoblin Patron to yourself.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:statueofworship",
+                "nbt": "{WITCBoundPlayer:\"\"}"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:red_flower"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 21
+              }
+            },
+            {
+              "item": {
+                "id": "minecraft:yellow_flower"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "What is a God to a Nonbeliever",
+      "description": "Having Hobgoblins worship you instead of them has angered Mog and Gulg. They may send their avatars to attack if they notice you have a large amount of worshippers. You may also use a Nether Star on the Statue bound to you to summon them at once. While Mog and Gulg are closer to each other, they take much less damage.",
+      "x": 260,
+      "y": 125,
+      "icon": {
+        "id": "witchery:quiverofmog"
+      },
+      "prerequisites": [
+        "What is a King to a God"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Defeat Mog",
+          "longDescription": "Mog has 400 health points, or 200 hearts of health points. She shoots arrows that are much faster than normal arrows that do more damage when she is near Gulg. Slaying Mog will typically drop a piece of chain armor, some Koboldite Nuggets, and Mog\u0027s Quiver. Mog\u0027s Quiver is worn as a chestplate, and allows the wearer to shoot infinite arrows. Unlike the Infinity enchantment, it does not require the wearer have any arrows in their inventory. The arrows will be much faster and do more damage ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:quiverofmog"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Defeat Gulg",
+          "longDescription": "Gulg has 400 health points, or 200 hearts of health points. He will punch the player into the air high enough to cause fall damage. Slaying Gulg will typically drop a piece of chain armor, some Koboldite Nuggets, and Gulg\u0027s Gurdle. Gulg\u0027s Gurdle is worn as leggings, and allows the wearer to launch entities up to 10 blocks by simply punching them. The punches will deal 4 damage each as well. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:gurdleofgulg"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Werewolves of London",
+      "description": "Lycanthropy is the disease that causes a human to be a werewolf. Werewolves have several buffs and nerfs. Werewolves have 3 forms: human, wolf, and wolfman. The wolf form allows the werewolf to travel in 1 block gaps, move much faster, jump farther, step asist, night vision, immunity to poison, natural armor, and resitance to magical damage. However, the wolf cannot wear armor, and has a weakness to silver. The Wolfman form has faster movement, significantly higher jumps, step assist, night vision, natural armor, significant bare-handed damage increase, significant health increase, and resistance to magical damage. However, the Wolfman form also cannot wear armor, transforming will force item being held to be dropped, and has a weakness to silver. The weakness to silver is very significant: damage weaponry deals double damage and ignores the werewolf\u0027s natural armor. You can increase the level of the werewolf by doing certain quests, which gives the werewolf several abilities. Werewolves can become vampires, as well. However, there are several drawbacks to doing so: the wolf/wolfman forms cannot use vampire powers, feeding as a wolf does not restore hunger (only draining blood can), the hybrid becomes weak to silver, as well as fire and sun, and the maximum blood storage for a hybrid is roughly two thirds that of a pure vampire.",
+      "x": 271,
+      "y": 20,
+      "icon": {
+        "id": "witchery:mooncharm"
+      },
+      "prerequisites": [
+        "{Sufficiently Advanced Tech}[So Many Altars]",
+        "Occult Club"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Level 1 Werewolf",
+          "longDescription": "A werewolf can be created using the Curse of the Wolf (or, an already existing Level 10 Werewolf, if one exists on the server). The Curse of the Wolf requires a full coven, a medium ring of Infernal Chalk, the ingredients below, 10,000 altar power, a cat familiar, and a full moon. Upon the curse\u0027s completion, the player will be transformed into a Werewolf and forced into wolf form. At Level 1, the werewolf we be forced into wolf form every full moon.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:taglockkit"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 31
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:wolfhead",
+                "damage": 1
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 156
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:diamond"
+              }
+            },
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 71
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 2 Werewolf",
+          "longDescription": "Craft a Wolf Altar and place it in the world. Right-click it to start the quest for the next level of lycanthropy. Level 2 Lycanthropy requires you give the Wolf Altar 3 Gold Ingots. This will give the werewolf the Moon Charm, which prevents forced transormations while allowing them to manually transform. Hold right-click while holding the Moon Charm to transform to and from the wolf form. The Moon Charm takes durability damage, get more by giving the Wolf Altar 3 more Gold Ingots. Sheep killed while in wolf form drop Raw Lambchop.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:wolfaltar"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "minecraft:gold_ingot"
+              },
+              "required": 3,
+              "precision": "ORE_DICTIONARY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 3 Werewolf",
+          "longDescription": "To become a Level 3 Lycanthrope, give the Wolf Altar 30 Raw Lambchops. Raw Lambchops only drop when you kill Sheep in wolf form. Level 3 Lycanthropes can sneak left-click to instantly dig sand or dirt, occasionally dropping Bones.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 158
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 4 Werewolf",
+          "longDescription": "Level 4 Lycanthropy is reached by giving the Wolf Altar 10 Tongue of Dog. Level 4 Lycanthropes can refill their hunger by killing mobs in their non-human forms. However, if they are a vampire-werewolf hybrid, they cannot do this.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 25
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 5 Werewolf",
+          "longDescription": "Level 5 Lycanthropy is reached by landing the killing blow on the Horned Huntsman. BE WARNED - DO NOT DO THIS IN PEACEFUL MODE. The Wolf Altar will give you a Horn of the Hunt. Hold right-click on it to spawn the Horned Huntsman. The Horned Huntsman is a very strong boss, so be prepared for a fight. Land the killing blow on it, then right-click the Wolf Altar once again. Level 5 Lycanthropes can now transform into the Wolfman form by sneak right-clicking the Moon Charm.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:heartCanister",
+                "damage": 3
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 6 Werewolf",
+          "longDescription": "To reach Level 6 Lycanthropy, kill 10 hostile monsters with critical hits after getting the quest from the Wolf Altar. Level 6 Lycanthropes do more damage while sprinting in their non-human forms.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mooncharm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 7 Werewolf",
+          "longDescription": "Level 7 Lycanthropy is reached by completing the quest assigned by the Wolf Altar. The werewolf, in their Wolf/Wolfman form, must go to 16 different locations and howl at the moon by sneak right-clicking while looking straight up. Level 7 Lycanthropes can howl to stun nearby mobs.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mooncharm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 8 Werewolf",
+          "longDescription": "Level 8 Lycanthropy, as always, starts by getting the quest from the Wolf Altar. Tame 6 wild Wolves by right-clicking them with an empty hand as a Wolf. Level 8 Lycanthropes can howl in their non-human forms to summon their pack to help fight.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mooncharm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 9 Werewolf",
+          "longDescription": "Level 9 Lycanthropy, once again, must start with the Wolf Altar. Kill 30 Zombie Pigmen in the Nether in Wolfman form. A Level 9 Lycanthrope\u0027s attacks will pass through the armor of their opponent, harming them as if they were naked.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mooncharm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Level 10 Werewolf",
+          "longDescription": "Level 10, one last time, starts at the Wolf Altar. Kill a villager or player as a Wolfman. Level 10 Lycanthropes can infect Villagers and players with the disease by bringing them nearly to death in their Wolfman form.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mooncharm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mirror Mirror",
+      "description": "The Magic Mirror is a fairly interesting block. Right-click the Mirror after placing it in the world to find out if you are the fairest in the land. If you aren\u0027t, then you can find and kill them, which gives a chance of giving a Golden Heart. This is only possible if the Mirror is still inhabited by the Demon. You can right-click inhabited Mirrors with Quartz Spheres to turn them into Duplication Grenades. Duplication Grenades, when thrown, spawn a mirror copy of your image that will take the aggro from any monsters currently attacking you. Duplication Grenades require 2,000 Altar Power to be created. You can right-click the Mirror with a Taglock Kit to take on the image of the player it\u0027s bound to. Beware, if you get too close to an inhabited Mirror, you may be sucked in. Inside the Mirror is a 9x9x9 room with a Reflection, who will attack you. The Reflection has your skin, your armor, and your weapons, so don\u0027t try fighting it in something extremely powerful. Defeating the Reflection will make the Mirror Hollow, instead of Inhabited. You can build inside of the hollow Mirror, or you can place 2 hollow Mirrors up to 16 blocks away from eachother back-to-back, going through one will exit through the other. The Mirror will remember the structures inside of it when broken, so you can use it as a portable 9x9x9 work area for anything you want, be that a storage room or anything else.",
+      "x": 109,
+      "y": 98,
+      "icon": {
+        "id": "witchery:mirror"
+      },
+      "prerequisites": [
+        "Imagination Nation",
+        "Squared Circle"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Magic Mirror",
+          "longDescription": "The Mirror is created through a Rite of Infusion using a Brew of Hollow Tears, a Gold Ingot, a Glass Pane, and a live Demon. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:mirror"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tap Your Heels Together",
+      "description": "Ruby Slippers allow an infused player to teleport to their spawn points (or the destination of a Bound Waystone dropped nearby) by saying in chat the words \"There\u0027s no place like home!\" You can only teleport to your spawn every half hour (5 minutes if using a Waystone), and it will take 30% of your total infusion power if you are within the same dimension. If you are not within the same dimension, it will take 60% of your total infusion power. ",
+      "x": 235,
+      "y": 76,
+      "icon": {
+        "id": "witchery:rubyslippers"
+      },
+      "prerequisites": [
+        "Deal With the Devil"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Ruby Slippers",
+          "longDescription": "Ruby Slippers have the same durability, protection, and enchantability as Leather Boots, but they cannot be dyed. ",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:rubyslippers"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deal With the Devil\u0027s Intern",
+      "description": "Flame Imps are called forth with a Rite of Summoning. They will try to attack the first person they see, but they can be calmed by a Demonic Contract that has been signed with blood (aka crafted with a bound Taglock Kit), along with about 25 levels of experience. Once the Imp has been signed into a contract, it will protect its master from attackers. Giving a Demon Heart to the Flame Imp will make it much stronger for 30 minutes. However, it will not be able to use Imp Magic until it calms down.",
+      "x": 219,
+      "y": 56,
+      "icon": {
+        "id": "witchery:ingredient",
+        "damage": 140
+      },
+      "prerequisites": [
+        "Squared Circle"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Write a Demonic Contract",
+          "longDescription": "Give the Flame Imp \"shinies\" like Gold and Diamond to make it happy. Happy Flame Imps have a chance of giving you certain gifts, in the form of Souls of certain demons. Drinking these Souls gives the player the ability to cast new spells with the Mystic Branch. Flame Imps that have been given shinies can also accept more contracts that use the Demonic Contract as a crafting component. These must also be signed with the blood of the target of the Contract.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:ingredient",
+                "damage": 140
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unnamed",
+      "x": 123,
+      "y": 190,
+      "icon": {
+        "id": "witchery:deathshand"
+      },
+      "prerequisites": [
+        "Fire and Fetishes"
+      ],
+      "tasks": [
+        {
+          "type": "KILL",
+          "description": "Kill Death",
+          "mobs": [
+            {
+              "name": "Kill Death",
+              "icon": {
+                "id": "witchery:deathshand"
+              },
+              "mob": "witchery.death",
+              "kills": 1,
+              "exact": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reputationBar": []
+}

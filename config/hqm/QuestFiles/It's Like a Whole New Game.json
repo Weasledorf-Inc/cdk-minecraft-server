@@ -1,0 +1,736 @@
+{
+  "name": "It\u0027s Like a Whole New Game",
+  "description": "You gotta start somewhere! This set will teach you the ins and outs of the early game.",
+  "quests": [
+    {
+      "name": "You\u0027re Gonna Get Splinters",
+      "description": "Punching trees! Getting wood! Excitement! Logs only give 2 planks now, however.",
+      "x": 55,
+      "y": 11,
+      "icon": {
+        "id": "minecraft:log"
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get 16 Wood Logs",
+          "longDescription": "While Expert Mode is way different than normal, it isn\u0027t so different that you don\u0027t need to punch trees to start out with. Get 16 wooden logs! Any type will work.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:log"
+              },
+              "required": 16,
+              "precision": "ORE_DICTIONARY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "minecraft:stone_axe"
+        }
+      ]
+    },
+    {
+      "name": "Tinkering",
+      "description": "Vanilla tools above stone (aside from hoes) are useless except for crafting recipes. You want to use Tinkers\u0027 Construct mostly. However, without a Smeltery, you can only use flint or other non-metallic tools. These are the blocks required to make Tinkers\u0027 tools. Don\u0027t spend too much making these, as they will be made obsolete by metal tools once those are made available. These quests REQUIRE the oak variants to be completed.",
+      "x": 86,
+      "y": 62,
+      "icon": {
+        "id": "TConstruct:ToolStationBlock"
+      },
+      "prerequisites": [
+        "You\u0027re Gonna Get Splinters"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Stencil Table",
+          "longDescription": "The Stencil Table is what you use to turn regular Stencils into Patterns. Put the Stencils in the left slot, choose the pattern you need, and take it out of the right slot. There are about 25 stencils required to make all the patterns, not counting the ones it takes to make the blocks.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:ToolStationBlock",
+                "damage": 10
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Part Builder + Pattern Chest",
+          "longDescription": " Put the patterns into the Pattern Chest, and make sure it is placed touching the Part Builder directly, which will let the Part Builder access all the Patterns it needs. Put the pattern in the far left slot, then put the material you want to make the part out of in the slot directly to the right of the one with the pattern in it. Metallic parts cannot be created without a Smeltery, so stick to something like Flint. You can also use Certus Quartz, Sapphire, Peridot, or Ruby if you have the materials. Cactus, Bone, Slimes Crystals of all colors, Paper, Obsidian, and Thaumium also are non-metallic, and give unique or useful modifiers that don\u0027t take up a modifier slot.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:ToolStationBlock",
+                "damage": 5
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "TConstruct:ToolStationBlock",
+                "damage": 1
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Tool Station",
+          "longDescription": "The Tool Station is where it all comes together. Choose the tool you wish to create on the right of the GUI. Place the tool parts you require in the appropriate slots. Name that sucker, and pull out the finished product! If you wish to apply modifiers to the tool, place the tool in the mid-right slot on the left side, and the modifiers in the other 2. The \"Materials and You: Volume 2\" book (or you know, the rest of the internet) should have a list of modifiers and their effects in it.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:ToolStationBlock"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "TConstruct:blankPattern",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "I\u0027ve Got Balls of Moss",
+      "description": "The Ball of Moss is an invaluable modifier, even at late game. Tools with the modifier slowly automatically repair themselves. This saves a ton of resources because you won\u0027t have to repair the tool ever. Also, if you want to get the Sharpness upgrade, 3 Certus Quartz is an entire level as opposed to the giant amount of Nether Quartz it would usually take.",
+      "x": 52,
+      "y": 81,
+      "icon": {
+        "id": "TConstruct:pickaxe",
+        "nbt": "{InfiTool:{BaseDurability:171,Head:3,BaseAttack:3,Moss:3,Tooltip1:\"§2Auto-Repair\",Effect1:4,HarvestLevel:1,ModifierTip1:\"§2Moss\",Attack:3,RenderHead:3,ModDurability:0.0f,Handle:0,Broken:0b,Shoddy:0.0f,RenderHandle:0,Accessory:0,MiningSpeed:525,RenderAccessory:0,Unbreaking:0,Damage:0,BonusDurability:0,TotalDurability:171,Modifiers:2},display:{Name:\"§fFlint Pickaxe\"}}"
+      },
+      "prerequisites": [
+        "Tinkering"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Ball of Moss",
+          "longDescription": "You can use a Chisel to turn Stone Bricks into Mossy Stone Bricks and use those!",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:materials",
+                "damage": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "What\u0027s Up, Hotstuff?",
+      "description": "A Smeltery is an essential tool for the young Tinkerer. If you don\u0027t want to crawl along the bottom of rivers and swamps for clay and sand, you can often find smeltery parts in Villages. The Smeltery is fueled by Lava in the Seared Tank, and also doubles ore output. A good tool to make Pickaxe Heads out of is Bronze, an alloy of Copper and Tin at a 3:1 ratio.",
+      "x": 132,
+      "y": 88,
+      "icon": {
+        "id": "TConstruct:Smeltery"
+      },
+      "prerequisites": [
+        "Tinkering"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Smeltery",
+          "longDescription": "For the average 3x3x1 interior Smeltery, you need a total of 104 Seared Bricks (the item). That amounts to 104 (64+40) Sand, Gravel, and Clay.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:Smeltery"
+              }
+            },
+            {
+              "item": {
+                "id": "TConstruct:LavaTank"
+              }
+            },
+            {
+              "item": {
+                "id": "TConstruct:SearedBlock"
+              }
+            },
+            {
+              "item": {
+                "id": "TConstruct:SearedBlock",
+                "damage": 1
+              }
+            },
+            {
+              "item": {
+                "id": "TConstruct:Smeltery",
+                "damage": 1
+              }
+            },
+            {
+              "item": {
+                "id": "TConstruct:Smeltery",
+                "damage": 2
+              },
+              "required": 18
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Forestry:canLava",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "Who Made Buckets So Hard?",
+      "description": "As you may or may not have noticed, the recipe for Buckets has drastically changed. In the meanwhile, Lava can be moved to a Smeltery via the Can from Forestry! You can use it for other stuff too, I guess. They cannot place fluids in the world, however.",
+      "x": 134,
+      "y": 143,
+      "icon": {
+        "id": "Forestry:canEmpty"
+      },
+      "prerequisites": [
+        "What\u0027s Up, Hotstuff?"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make some Cans",
+          "longDescription": "Cans can hold 1000mB. In layman\u0027s terms, that\u0027s one bucket.",
+          "items": [
+            {
+              "item": {
+                "id": "Forestry:canEmpty"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Forestry:canLava",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "Grinding Gears",
+      "description": "Gears can currently only be created using the Gear Cast and the metal the Gear is made of.",
+      "x": 181,
+      "y": 88,
+      "icon": {
+        "id": "ThermalFoundation:material",
+        "damage": 12
+      },
+      "prerequisites": [
+        "What\u0027s Up, Hotstuff?"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get a Gear Cast",
+          "longDescription": "The Gear Cast is made using the Stone Gear and 2 Gold/Aluminum Brass in a Smeltery.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:gearCast"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Infinite Cosmic Power!",
+      "description": "Itty-bitty generation speed. The Survivalist Generator is incredibly slow, but fuel efficient. It\u0027s also probably the only thing you can make right now, so you\u0027ve gotta deal with it for a while. To use Extra Utilities generators, you have to use IE Wire Coils or TE Fluxducts to transfer the RF; you can\u0027t just put the generator down next to the machine.",
+      "x": 175,
+      "y": 144,
+      "icon": {
+        "id": "ExtraUtilities:generator"
+      },
+      "prerequisites": [
+        "Grinding Gears"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Make a Survivalist Generator",
+          "longDescription": "A single chunk of Coal in this bad boy will make you 80,000RF total, but at only 5RF/t. 20t in a second means that\u0027s 100RF/s. Not a whole lot, but it\u0027s workable for now. It\u0027s a good idea to use this to fill a Capacitor slowly instead of directly feeding machines, as it likely won\u0027t keep up with its RF demands.",
+          "items": [
+            {
+              "item": {
+                "id": "ExtraUtilities:generator"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "minecraft:coal",
+          "damage": 1,
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Baking Bad",
+      "description": "The Coke Oven is an integral part of Expert Mode, mostly because of the Creosote it produces. The Coal Coke doesn\u0027t hurt either. It might be good to automate this fairly quickly, which can be done with just a hopper going in and one coming out, with some Cans or something similar to collect the Creosote.",
+      "x": 265,
+      "y": 13,
+      "icon": {
+        "id": "ImmersiveEngineering:stoneDecoration",
+        "damage": 1
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Create the Coke Oven",
+          "longDescription": "The Immersive Engineering Coke Oven is a multiblock. It is a 3x3x3 cube of Coke Bricks. Right click on any of the center blocks with an Engineer\u0027s Hammer to form the multiblock.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:stoneDecoration",
+                "damage": 1
+              },
+              "required": 27
+            },
+            {
+              "item": {
+                "id": "ImmersiveEngineering:tool"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Collect Coal Coke",
+          "longDescription": "Put regular Coal into the left side, give it 90 seconds, and it turns into 500mB (half a bucket) of Creosote Oil and 1 Coal Coke.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:material",
+                "damage": 6
+              },
+              "precision": "ORE_DICTIONARY"
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "Railcraft:fluid.creosote.can",
+          "amount": 8
+        },
+        {
+          "id": "ImmersiveEngineering:stoneDecoration",
+          "damage": 3
+        }
+      ]
+    },
+    {
+      "name": "Tools of the Trade",
+      "description": "These tools are rather inneficient but early-game methods of getting parts for machinery.",
+      "x": 300,
+      "y": 12,
+      "icon": {
+        "id": "IC2:itemToolForgeHammer"
+      },
+      "prerequisites": [
+        "Baking Bad"
+      ],
+      "tasks": [
+        {
+          "type": "CRAFT",
+          "description": "Craft a Forge Hammer",
+          "longDescription": "The Forge Hammer turns Ingots into Plates of the same kind. Used by crafting with Ingots, it loses durability rather fast. You\u0027re going to make a couple I\u0027m sure.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:itemToolForgeHammer"
+              }
+            }
+          ]
+        },
+        {
+          "type": "CRAFT",
+          "description": "Craft a Cutter",
+          "longDescription": "The Cutter turns Plates into Cable of the same kind. Like the Forge Hammer, it also loses durability on use.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:itemToolCutter"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "IC2:blockMachine"
+        }
+      ]
+    },
+    {
+      "name": "So Heats",
+      "description": "These machines create items that are used in many machine crafting recipes.",
+      "x": 212,
+      "y": 143,
+      "icon": {
+        "id": "BuildCraft|Silicon:laserBlock"
+      },
+      "prerequisites": [
+        "Grinding Gears"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get a Thermionic Fabricator",
+          "longDescription": "Supply the Thermionic Fabricator with RF, set the recipe by placing the required items in the required slots, and place the items into the bottom slot. Put Sand or Glass into the top right, and if it has a valid recipe, it will be turned into Molten Glass and be used in the recipe.",
+          "items": [
+            {
+              "item": {
+                "id": "Forestry:factory2"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get a Laser",
+          "longDescription": "Lasers provide power to the Assembly Table and similar machines. Place the Laser down by the machine and connect the Laser to a source of RF. It will shoot a laser beam charged with RF to the machine. More lasers \u003d more RF/t \u003d faster assembly.",
+          "items": [
+            {
+              "item": {
+                "id": "BuildCraft|Silicon:laserBlock"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get an Assembly Table",
+          "longDescription": "The Assembly Table makes Chipsets, among other items used in recipes. Place the items that the recipe requires in the left side, click on the result you want, and make sure there is a Laser with energy nearby. It takes a while for items to craft in it, so be patient. Items crafted will not be stored in the inventory, but be shot out into the world, or placed into an inventory that is touching it, like a chest.",
+          "items": [
+            {
+              "item": {
+                "id": "BuildCraft|Silicon:laserTableBlock"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "BuildCraft|Silicon:laserBlock",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "name": "Wait, HOW Long?!?!",
+      "description": "Pure Certus Quartz is super important for stuff right? What do you mean isn\u0027t this a little early for getting Pure Certus Quartz? Didn\u0027tcha know? Certus Quartz Seeds now take SIXTEEN FULL REAL LIFE HOURS TO GROW.",
+      "x": 269,
+      "y": 91,
+      "icon": {
+        "id": "appliedenergistics2:item.ItemMultiMaterial",
+        "damage": 10
+      },
+      "prerequisites": [
+        "Grinding Away"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Pure/Fluix Seeds",
+          "longDescription": "Make as many as you\u0027re comfortable with right now, because you\u0027ll need them later. Throw them in water and just wait.",
+          "items": [
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemCrystalSeed",
+                "nbt": "{progress:0}"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemCrystalSeed",
+                "damage": 1200,
+                "nbt": "{progress:1200}"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "appliedenergistics2:item.ItemMultiMaterial",
+          "damage": 10,
+          "amount": 8
+        },
+        {
+          "id": "appliedenergistics2:item.ItemMultiMaterial",
+          "damage": 12,
+          "amount": 8
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "appliedenergistics2:item.ItemMultiMaterial",
+          "damage": 10,
+          "amount": 16
+        },
+        {
+          "id": "appliedenergistics2:item.ItemMultiMaterial",
+          "damage": 12,
+          "amount": 16
+        }
+      ]
+    },
+    {
+      "name": "This Ruins my Aesthetics!",
+      "description": "The vanilla furnace recipe has been changed to instead give a Slab Furnace. They are functionally identical, but the Slab Furnace takes up only half a block. You can\u0027t put 2 in the same block, but you can make functional stairs out of it I guess.",
+      "x": 30,
+      "y": 51,
+      "icon": {
+        "id": "minecraft:furnace"
+      },
+      "prerequisites": [
+        "You\u0027re Gonna Get Splinters"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Slab Furnace",
+          "longDescription": "Make a Slab Furnace",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:FurnaceSlab"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a vanilla Furnace",
+          "longDescription": "The vanilla Furnace is made using 8 Compressed Cobble instead of 8 Cobble.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:furnace"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "minecraft:coal",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Grinding Away",
+      "description": "There are some recipes that reqire metal dusts instead of ingots. These dusts can be created using the Quartz Grindstone. Place the Grindstone, place the Crank on it, and hold right click on the Crank to, well, crank it. You can put metals or ores in the top left, and the dusts are put into the bottom right slots. A single ore turns into 2 dusts, which are smelted into an ingot each, so this can be used for early-game ore doubling.",
+      "x": 240,
+      "y": 68,
+      "icon": {
+        "id": "appliedenergistics2:tile.BlockGrinder"
+      },
+      "prerequisites": [
+        "Baking Bad",
+        "Grinding Gears"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Grindstone",
+          "longDescription": "Cranks will break if you they are used when the Grindstone has nothing to grind.",
+          "items": [
+            {
+              "item": {
+                "id": "appliedenergistics2:tile.BlockGrinder"
+              }
+            },
+            {
+              "item": {
+                "id": "appliedenergistics2:tile.BlockCrank"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Goes Great with Pancakes!",
+      "description": "Rubber can be gotten in 2 ways.",
+      "x": 22,
+      "y": 11,
+      "icon": {
+        "id": "IC2:itemTreetap"
+      },
+      "prerequisites": [
+        "You\u0027re Gonna Get Splinters"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "MFR Rubber",
+          "longDescription": "MFR Rubber Trees, when chopped down, drop Raw Rubber, which is smelted into Rubber Bars.",
+          "items": [
+            {
+              "item": {
+                "id": "MineFactoryReloaded:rubberwood.log"
+              }
+            },
+            {
+              "item": {
+                "id": "MineFactoryReloaded:rubber.raw"
+              }
+            },
+            {
+              "item": {
+                "id": "MineFactoryReloaded:rubber.bar"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "IC2 Rubber",
+          "longDescription": "The other way you can get it is by finding an IC2 Rubber Tree. These trees have 3 Leaves on top. Don\u0027t chop the tree, but do remove all leaves but the ones directly above the logs. Some of the logs probably will have little blobs of orange on one side. Right click that side of the block with a Treetap to get Sticky Resin. When the orange goes away but the ring around it stays, then it can regrow the Sticky Resin. You can keep tapping it to get more Sticky Resin, but there is a chance that you will ruin that log, rendering it unable to grow more Sticky Resin. You can either smelt the Resin to get 1 Rubber, or put it into an Extractor to get 3.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:itemTreetap"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "IC2:itemHarz"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "IC2:itemRubber"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "IC2:itemRubber",
+          "amount": 16
+        },
+        {
+          "id": "MineFactoryReloaded:rubber.bar",
+          "amount": 16
+        }
+      ]
+    },
+    {
+      "name": "36 Slots Ain\u0027t Enough",
+      "description": "The Knapsack goes into your Tinkers\u0027 Construct inventory, the Diamond Chestplate tab at the top. It gives you another tab that allows you to store a small chest\u0027s worth of items in it.",
+      "x": 81,
+      "y": 117,
+      "icon": {
+        "id": "TConstruct:knapsack"
+      },
+      "prerequisites": [
+        "What\u0027s Up, Hotstuff?"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Knapsack",
+          "longDescription": "The Knapsack is useful for many things. You can store food, torches, tools, or pretty much literally anything else.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:knapsack"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Just a Hobby",
+      "description": "The Hobbyist\u0027s Steam Engine is a great early-game way to generate RF. It uses furnace fuel, such as coal, to heat up water that can be piped in and turn it into Steam. The Steam is then converted into RF if it can leave the engine.",
+      "x": 243,
+      "y": 124,
+      "icon": {
+        "id": "Railcraft:machine.beta",
+        "damage": 7
+      },
+      "prerequisites": [
+        "Grinding Gears"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Hobbyist\u0027s Steam Engine",
+          "longDescription": "The Hobbyist\u0027s Steam Engine will only begin to create Steam, and thus RF, after the internal temperature reaches 100°C. Give it a redstone signal to turn it on.",
+          "items": [
+            {
+              "item": {
+                "id": "Railcraft:machine.beta",
+                "damage": 7
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slow and Steady",
+      "description": "A rather slow, but easy to set up method to get Steel is the Immersive Engineering Blast Furnace. A single Steel Ingot takes 60 seconds to bake. You need to use Coal Coke as fuel, you can\u0027t use anything else.",
+      "x": 286,
+      "y": 47,
+      "icon": {
+        "id": "ImmersiveEngineering:stoneDecoration",
+        "damage": 2
+      },
+      "prerequisites": [
+        "Baking Bad"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Blast Furnace",
+          "longDescription": "There are 3 recipes to make the Blast Bricks: Glue, which requires you to stick a Horse into a Smeltery; Ender Pearls; and TNT. Make a 3x3x3 and click the center with an Engineer\u0027s Hammer.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:stoneDecoration",
+                "damage": 2
+              },
+              "required": 27
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reputationBar": []
+}

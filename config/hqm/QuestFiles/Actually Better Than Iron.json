@@ -1,0 +1,707 @@
+{
+  "name": "Actually Better Than Iron",
+  "description": "Now that we have a good source of steel, we can start to make the more complex machines!",
+  "quests": [
+    {
+      "name": "The Skyforge",
+      "description": "The Tool Forge is required to make higher tier tools like the Hammer.",
+      "x": 117,
+      "y": 21,
+      "icon": {
+        "id": "TConstruct:ToolForgeBlock"
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Cast",
+          "longDescription": "Make a cast by pouring 2 ingots of either Gold or Alluminum Brass on a disposable Stone part of the Cast you want to make. To pour the material on a part, right click the part on the Casting Table and then activate the Faucet.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:metalPattern",
+                "damage": 2
+              },
+              "precision": "FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "CRAFT",
+          "description": "Craft a Tool Forge",
+          "longDescription": "The Tool Forge can replace your Tool Station. It allows you to make additional, cooler tools like the Hammer or the Scythe. Some of the new tools require metal parts.",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:ToolForgeBlock"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Better-Than-Iron Man",
+      "description": "The IC2 path of getting Refined Iron, which also works as Steel, is a bit more involved. You need a ton of machines and infrastructure set up, but is faster once it\u0027s ready.",
+      "x": 202,
+      "y": 20,
+      "icon": {
+        "id": "IC2:blockMachine3",
+        "damage": 1
+      },
+      "prerequisites": [
+        "{It\u0027s Like a Whole New Game}[So Heats]"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make Compressed Air Cells",
+          "longDescription": "First, you need the Compressor. Put Empty Cells into it to make Compressed Air Cells.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:blockMachine",
+                "damage": 5
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "IC2:itemCellEmpty",
+                "damage": 5
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Set up the Heat Generator",
+          "longDescription": "The Blast Furnace does not use EU /or/ RF. It uses heat, which we will get using the Electric Heat Generator. EU comes into the Heat Generator from any side, except for the orange one, which is where heat comes out of. You need to have Coils in the Heat Generator as well. 2EU \u003d 1hU. You cannot power the Electric Heat Generator directly through IE Wire Coils, you have to go through a BatBox (or any other IC2 storage) first.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:blockHeatGenerator",
+                "damage": 3
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Set up the Blast Furnace",
+          "longDescription": "The orange side of the Blast Furnace accepts heat, so you should put it up against the Heat Generator. Place the Compressed Air into the bottom left slot, and put Iron ingots into the slot above it. It will start to heat up, and once heat is at 100%, then it will start converting the Iron and Compressed Air into Refined Iron and Slag.",
+          "items": [
+            {
+              "item": {
+                "id": "IC2:blockMachine3",
+                "damage": 1
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Brotherhood of Steel",
+      "description": "So, now that we have Steel, we can finally progress into the Steel Age.",
+      "x": 155,
+      "y": 47,
+      "bigicon": true,
+      "icon": {
+        "id": "ImmersiveEngineering:metal",
+        "damage": 7
+      },
+      "prerequisites": [
+        "{It\u0027s Like a Whole New Game}[Slow and Steady]",
+        "Better-Than-Iron Man"
+      ],
+      "parentrequirement": 1,
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get some Steel",
+          "longDescription": "Refined Iron is the exact same as Steel",
+          "items": [
+            {
+              "item": {
+                "id": "TConstruct:materials",
+                "damage": 16
+              },
+              "precision": "ORE_DICTIONARY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "ImmersiveEngineering:metal",
+          "damage": 7,
+          "amount": 15
+        }
+      ]
+    },
+    {
+      "name": "Alloys",
+      "description": "The Alloy Smelter is one of the easiest ways to make alloys, like Signalum. These alloys are required for some of the more advanced machines. You can put a Double-Layer or Octadic Capacitor in it to make it faster and hold more RF.",
+      "x": 158,
+      "y": 140,
+      "icon": {
+        "id": "EnderIO:blockAlloySmelter"
+      },
+      "prerequisites": [
+        "Dwayne \"The Rock\" Crusher"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make an Alloy Smelter",
+          "longDescription": "The Alloy Smelter has 3 modes: Alloys only, Furnace only, and All Smelting.",
+          "items": [
+            {
+              "item": {
+                "id": "EnderIO:blockAlloySmelter"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dwayne \"The Rock\" Crusher",
+      "description": "The Rock Crusher is a multiblock that uses RF to crush blocks. The crushed blocks are used in some recipes. You can also crush ores in this.",
+      "x": 158,
+      "y": 89,
+      "icon": {
+        "id": "Railcraft:machine.alpha",
+        "damage": 15
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Rock Crusher",
+          "longDescription": "The Rock Crusher is a 3x2x2 multiblock. Two rows of 3, with another layer exactly the same on top.",
+          "items": [
+            {
+              "item": {
+                "id": "Railcraft:machine.alpha",
+                "damage": 15
+              },
+              "required": 12,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SWAG Mill",
+      "description": "The SAG Mill uses RF to crush ores and other blocks and items. In addition to a 100% chance to double ores, it has a small chance to give you dusts for other ores, and cobblestone.",
+      "x": 198,
+      "y": 142,
+      "icon": {
+        "id": "EnderIO:blockSagMill"
+      },
+      "prerequisites": [
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a SAG Mill",
+          "longDescription": "You can put Flint into the SAG Mill to multiply the main output by 1.2, bonus output by 1.25, and reduce power use by 15%. Later, you can put in Dark Steel Balls to multiply main output by 1.5, bonus output by 2, and reduce power use by 30%.",
+          "items": [
+            {
+              "item": {
+                "id": "EnderIO:blockSagMill"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Miner\u0027s Friend",
+      "description": "An Ender Chest / Ender Pouch combo is great for moving items from your inventory back to your base. For instance, while Mining, you can put Ores into the Pouch, and then have the Ores sucked out of the Ender Chest into your storage or processing.",
+      "x": 99,
+      "y": 89,
+      "icon": {
+        "id": "EnderStorage:enderChest"
+      },
+      "prerequisites": [
+        "Dwayne \"The Rock\" Crusher"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make an Ender Chest/Pouch",
+          "longDescription": "You can right-click a diamond onto the chest jewel thing that pops out of the front to set it to your player. That way, a diamond white-white-white is different than the regular white-white-white. Shift-right-click the Ender Chest with the Ender Pouch to link to two.",
+          "items": [
+            {
+              "item": {
+                "id": "EnderStorage:enderChest"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "EnderStorage:enderPouch"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lava Comes In, Lava Comes Out",
+      "description": "Ender Tanks work similar to Ender Chests, but for fluids. They are color coded by right-clicking the 3 wool bits at the top, and can be set to be specifically for your player by right-clicking the center bit with a diamond. Multiple tanks with the exact same color coordination and diamond share the same fluid inventory, so you can put one at, say, a lava pump in the Nether and put another next to your Smeltery to give your Smeltery essentially infinite lava.",
+      "x": 220,
+      "y": 89,
+      "icon": {
+        "id": "EnderStorage:enderChest",
+        "damage": 4096
+      },
+      "prerequisites": [
+        "Dwayne \"The Rock\" Crusher"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make an Ender Tank",
+          "longDescription": "Right click on the center-front bit to change it from input to automatically output below it, or to switch back to input. (Unfortunately, due to how HQM works, you need a w/w/w Ender Tank with no diamond to activate this quest)",
+          "items": [
+            {
+              "item": {
+                "id": "EnderStorage:enderChest",
+                "damage": 4096
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "EnderStorage:enderChest",
+          "damage": 4096
+        }
+      ]
+    },
+    {
+      "name": "Cut\u0027N\u0027Chop",
+      "description": "To run, it needs any Axe and Shears in the slots at the top. You can shift-click items into the Slice \u0027N\u0027 Splice and it will put the items where they need to go.",
+      "x": 129,
+      "y": 164,
+      "icon": {
+        "id": "EnderIO:blockSliceAndSplice"
+      },
+      "prerequisites": [
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Slice\u0027N\u0027Splice",
+          "items": [
+            {
+              "item": {
+                "id": "EnderIO:blockSliceAndSplice"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "EnderIO:item.darkSteel_shears"
+        },
+        {
+          "id": "EnderIO:item.darkSteel_axe"
+        }
+      ]
+    },
+    {
+      "name": "Bound to Your Will",
+      "description": "The Soul Binder is used to Bind the Soul of mobs to items to create new items, usually used in crafting.",
+      "x": 137,
+      "y": 116,
+      "icon": {
+        "id": "EnderIO:blockSoulBinder"
+      },
+      "prerequisites": [
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Soul Binder",
+          "longDescription": "The Soul Binder uses filled Soul Vials plus an item. To fill the Soul Vial, right click a mob with an empty Vial. Different recipes need different Souls.",
+          "items": [
+            {
+              "item": {
+                "id": "EnderIO:blockSoulBinder"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eating Skeletons",
+      "description": "The Slaughterhouse uses RF to kill mobs in a 5x5x3 area in front of it. They do not drop anything, and instead, the Slaughterhouse gets some Meat, and rarely Pink Slime. The Precision Sledgehammer lets you see the area covered by MFR machines.",
+      "x": 81,
+      "y": 140,
+      "icon": {
+        "id": "MineFactoryReloaded:machine.1",
+        "damage": 13
+      },
+      "prerequisites": [
+        "The \"The Vat\""
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Slaughterhouse",
+          "longDescription": "Pink Slime is very useful for crafting, and makes for some pretty good Tinkers\u0027 tools. It would be best to automate the Slaughterhouse with a mob farm or something similar.",
+          "items": [
+            {
+              "item": {
+                "id": "MineFactoryReloaded:machine.1",
+                "damage": 13
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Meat Packer",
+          "longDescription": "The Meat Packer uses liquid Meat and RF to make Raw Meat Ingots. Smelt these to make Cooked Meat Ingots, which are one of the best foods in the game.",
+          "items": [
+            {
+              "item": {
+                "id": "MineFactoryReloaded:machine.1",
+                "damage": 14
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Meteor Hunter",
+      "description": "The Inscriber is used to make AE2 Processors, which are used in recipes. It requires RF to run.",
+      "x": 185,
+      "y": 119,
+      "icon": {
+        "id": "appliedenergistics2:tile.BlockInscriber"
+      },
+      "prerequisites": [
+        "{It\u0027s Like a Whole New Game}[Wait, HOW Long?!?!]",
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Meteorite Compass",
+          "longDescription": "The Meteorite Compass points in the direction of the nearest AE2 meteorite. In the center of AE2 meteorites is a Sky Stone Chest that can have one of the Inscriber Presses",
+          "items": [
+            {
+              "item": {
+                "id": "appliedenergistics2:tile.BlockSkyCompass"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make 5 Inscribers",
+          "longDescription": "In order to automate the Inscribers without having to move around the Presses, you need 5 Inscribers: 4 for the Inscriber Presses and 1 for making them into Processors. A good method of automating Inscribers is using Steve\u0027s Factory Manager.",
+          "items": [
+            {
+              "item": {
+                "id": "appliedenergistics2:tile.BlockInscriber"
+              },
+              "required": 5,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get 1 of each Press",
+          "longDescription": "You can make extra Presses of ones you have by putting it and an Iron Block in the Inscriber.",
+          "items": [
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemMultiMaterial",
+                "damage": 13
+              }
+            },
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemMultiMaterial",
+                "damage": 14
+              }
+            },
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemMultiMaterial",
+                "damage": 15
+              }
+            },
+            {
+              "item": {
+                "id": "appliedenergistics2:item.ItemMultiMaterial",
+                "damage": 19
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boring",
+      "description": "The Tunnel Bore is a special machine. It acts like a Minecart, in that it needs to be on tracks. Put Gravel into the Ballast slots, and it will place the Gravel if it ever comes accross a hole that it would usually fall into. Put Tracks into the Track slots so that it can place them in front of it and keep going. The Bore Head tiers are Iron \u003c Steel \u003c Diamond. Diamond is the only one that can mine Obsidian, and will dig a 700 block long tunnel.",
+      "x": 106,
+      "y": 50,
+      "icon": {
+        "id": "Railcraft:cart.bore"
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Tunnel Bore",
+          "longDescription": "Any fuel that would work in a furnace will work in the Fuel slots. Coal Coke is the best for this reason.",
+          "items": [
+            {
+              "item": {
+                "id": "Railcraft:cart.bore"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Attatch some Chest Carts",
+          "longDescription": "By default, the Tunnel Bore will just spit out the blocks mined into the world behind it. If you place a Chest Cart behind it and shift right click the Chest Cart and the Tunnel Bore with any Railcraft Crowbar, they will be linked. Once linked, items are pushed into that chest instead. You can do this with many chests to extend the inventory space.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:chest_minecart"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Portation",
+      "description": "The RFTools Matter Transmitter and Matter Receiver are one of the easiest ways to go about teleporting.",
+      "x": 186,
+      "y": 167,
+      "icon": {
+        "id": "rftools:matterTransmitterBlock"
+      },
+      "prerequisites": [
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Matter blocks",
+          "longDescription": "These both require RF to run, and don\u0027t passively use any. You should definitely name these, and set them to private if you don\u0027t want people to be able to teleport into your base.",
+          "items": [
+            {
+              "item": {
+                "id": "rftools:matterTransmitterBlock"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "rftools:matterReceiverBlock"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make the Dialing Device",
+          "longDescription": "The Dialing Device needs RF and needs to be nearby to a Matter Transmitter. The Dialing Device allows you to decide which Transmitter to send from, and which Reciever to send to. Basically, set where you are and where you want to go. This is why it\u0027s best to name the Matter Transmitter and Matter Receiver.",
+          "items": [
+            {
+              "item": {
+                "id": "rftools:dialingDeviceBlock"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The \"The Vat\"",
+      "description": "The Vat is where you make certain fluids, like Nutrient Distillation or Rocket Fuel. Pipe the input fluid into it, give it the correct ingredients, and then pipe out the resultant fluid.",
+      "x": 113,
+      "y": 140,
+      "icon": {
+        "id": "EnderIO:blockVat"
+      },
+      "prerequisites": [
+        "Alloys"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make The Vat",
+          "longDescription": "Recipes can use several different ingredients in place of eachother, but they give different amounts of ",
+          "items": [
+            {
+              "item": {
+                "id": "EnderIO:blockVat"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Squeeze!",
+      "description": "The Compacting Drawer stores a block in 3 forms. For instance, if you put a Gold Ingot in it, you can pull out ingots, nuggets, or blocks, depending on how much you have. You can also use it to store Cobblestone, and it keeps it as regular Cobblestone, Compressed Cobblestone, and Double Compressed Cobblestone.",
+      "x": 217,
+      "y": 50,
+      "icon": {
+        "id": "StorageDrawers:compDrawers"
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Compacting Drawer",
+          "longDescription": "The Compacting Drawer\u0027s maximum storage is based on the highest denomination. That is, it can hold 16 stacks of Iron Blocks, for instance.",
+          "items": [
+            {
+              "item": {
+                "id": "StorageDrawers:compDrawers"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "ExtraUtilities:cobblestone_compressed",
+          "amount": 32
+        }
+      ]
+    },
+    {
+      "name": "Water Cooled",
+      "description": "Water Wheels generate RF based on the amount of flowing water blocks are touching it. All the water blocks have to be flowing with the wheel. You can have up to 3 Water Wheels per Kinetic Dynamo.",
+      "x": 189,
+      "y": 70,
+      "icon": {
+        "id": "ImmersiveEngineering:woodenDevice",
+        "damage": 1
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel",
+        "{Miscallaneous Machines}[Screw Hammers, Seriously]"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set Up a Water Mill",
+          "longDescription": "Place down the Kinetic Dynamo and then place the Water Wheel on the side that looks like a copper coil. RF can be piped out from any side.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:metalDevice",
+                "damage": 9
+              }
+            },
+            {
+              "item": {
+                "id": "ImmersiveEngineering:woodenDevice",
+                "damage": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fast and Steady",
+      "description": "The Improved Blast Furnace is basically the same as the regular Blast Furnace, except you can automate it and speed it up.",
+      "x": 128,
+      "y": 71,
+      "icon": {
+        "id": "ImmersiveEngineering:stoneDecoration",
+        "damage": 6
+      },
+      "prerequisites": [
+        "The Brotherhood of Steel"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Setup Improved Blast Furnace",
+          "longDescription": "The Improved Blast Furnace is a 3x3x3 of Reinforced Blast Bricks with a Hopper on top. Right-click the center side block with an Engineer\u0027s Hammer to form the multiblock. Input from the top, Steel is pulled from the front, and Slag is pulled from the back.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:stoneDecoration",
+                "damage": 6
+              },
+              "required": 27
+            },
+            {
+              "item": {
+                "id": "minecraft:hopper"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Blast Furnace Preheaters",
+          "longDescription": "You can also attatch 2 Blast Furnace Preheaters to use RF to speed up the process of making Steel. RF is pushed in from the top, and the Blast Furnace Preheaters are attatched at the sides of the Improved Blast Furnace.",
+          "items": [
+            {
+              "item": {
+                "id": "ImmersiveEngineering:metalDevice2",
+                "damage": 11
+              },
+              "required": 2,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reputationBar": []
+}

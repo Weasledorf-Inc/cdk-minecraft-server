@@ -14,12 +14,25 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'minecraft-server-construct',
   repositoryUrl: 'https://github.com/hasanaburayyan/cdk-minecraft-server.git',
   cdkDependencies: [
-    // 'aws-cdk-lib',
     '@aws-cdk/core',
     '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-apigatewayv2',
+    '@aws-cdk/aws-apigatewayv2-integrations',
+    '@aws-cdk/aws-lambda-python',
+    '@aws-cdk/aws-lambda-nodejs',
+    '@aws-cdk/aws-iam',
+    '@aws-cdk/aws-ecr',
+    '@aws-cdk/aws-ecr-assets',
   ],
   deps: [
     // ...cdkAlphaDependencies,
+    '@aws-sdk/client-ec2',
+    'cdk-ecr-deployment',
+    'fs-extra',
+  ],
+  devDeps: [
+    '@types/aws-lambda',
+    '@types/fs-extra',
   ],
 });
 project.synth();

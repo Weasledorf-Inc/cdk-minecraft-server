@@ -1,0 +1,304 @@
+{
+  "version": "15.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "test-mc-construct-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://496834626558/us-east-1",
+      "properties": {
+        "templateFile": "test-mc-construct-stack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/test-mc-construct-stack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "repositoryName": "aws-cdk/assets",
+              "imageTag": "1aa1f4ad44384e10733da52eda8e91c97929c1663584489f4f31a1a5212b0041",
+              "id": "1aa1f4ad44384e10733da52eda8e91c97929c1663584489f4f31a1a5212b0041",
+              "packaging": "container-image",
+              "path": "asset.1aa1f4ad44384e10733da52eda8e91c97929c1663584489f4f31a1a5212b0041",
+              "sourceHash": "1aa1f4ad44384e10733da52eda8e91c97929c1663584489f4f31a1a5212b0041"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddDockerImageAsset (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:129:23)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:82:19)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:86:37)",
+              "new DockerImageAsset (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ecr-assets/lib/image-asset.ts:176:40)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:96:23)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceec2pullecr94EC63A0",
+            "trace": [
+              "new Role (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:51:25)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/ec2-pull-ecr/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceec2pullecrDefaultPolicy8E995AB8",
+            "trace": [
+              "new Policy (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.addToPrincipal (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-iam/lib/grant.ts:92:61)",
+              "Function.addToPrincipalOrResource (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-iam/lib/grant.ts:48:26)",
+              "Repository.grant (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ecr/lib/repository.ts:146:22)",
+              "Repository.grantPull (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ecr/lib/repository.ts:157:22)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:86:18)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/default-security-group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstancedefaultsecuritygroup6D513840",
+            "trace": [
+              "new SecurityGroup (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:272:26)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:57:33)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/server/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceserverInstanceProfile75C5CE10",
+            "trace": [
+              "new Instance (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:164:24)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:65:24)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/server/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceserverB349B796",
+            "trace": [
+              "new Instance (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:199:21)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:65:24)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/elastic-ip": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceelasticip98BEC815",
+            "trace": [
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:75:5)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/test-mc-server/mc-server-instance/ecr-repo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testmcservermcserverinstanceecrrepoBC555D10",
+            "trace": [
+              "new Repository (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ecr/lib/repository.ts:322:22)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:82:20)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:194:9)",
+              "Function.valueForTypedStringParameter (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:245:17)",
+              "lookupImage (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/machine-image.ts:407:27)",
+              "AmazonLinuxImage.getImage (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/machine-image.ts:210:21)",
+              "new Instance (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:169:44)",
+              "new ServerInstance (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/server-instance-constuct.ts:65:24)",
+              "new MinecraftServer (/home/hasan/repos/minecraft-server-construct/src/minecraft-server/minecraft-server-construct.ts:77:27)",
+              "Object.<anonymous> (/home/hasan/repos/minecraft-server-construct/src/index.ts:11:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Module.m._compile (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1371:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1374:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "main (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:331:12)",
+              "Object.<anonymous> (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:482:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1101:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/test-mc-construct-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/home/hasan/repos/minecraft-server-construct/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (node:events:514:26)",
+              "process.emit (node:events:394:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit.sharedData.processEmitHook.installedValue [as emit] (/home/hasan/.npm/_npx/1bf7c3c15bf47d04/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)"
+            ]
+          }
+        ]
+      },
+      "displayName": "test-mc-construct-stack"
+    }
+  }
+}

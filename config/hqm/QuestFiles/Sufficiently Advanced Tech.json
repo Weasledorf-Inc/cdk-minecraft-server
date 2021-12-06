@@ -1,0 +1,811 @@
+{
+  "name": "Sufficiently Advanced Tech",
+  "description": "...is indistinguishable from magic, or as the saying goes. This chapter will walk you through the progression the magic mods share.",
+  "quests": [
+    {
+      "name": "Entrance to the Arcane",
+      "description": "Thaumcraft: Where even the most logical man becomes a gibbering mess, and loves every second of it.",
+      "x": 58,
+      "y": 13,
+      "icon": {
+        "id": "Thaumcraft:ItemThaumonomicon"
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get the Thaumonomicon",
+          "longDescription": "Make an Iron Capped Wooden Wand and right click a bookshelf with it to get the Thaumonomicon, Thaumcraft\u0027s Guide Book. Some things may not be accurate, as Infinity Expert Mode changes some recipes.",
+          "items": [
+            {
+              "item": {
+                "id": "Thaumcraft:ItemThaumonomicon"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Thaumcraft:ItemManaBean",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Flower Child",
+      "description": "The Lexica Botania, while innacurate in recipes, explains how Botania\u0027s mechanics work.",
+      "x": 26,
+      "y": 14,
+      "icon": {
+        "id": "Botania:lexicon"
+      },
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get the Lexica Botania",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:lexicon"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Botania:fertilizer",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Petals and Water",
+      "description": "The Petal Apothecary is how most Botanical flowers are created.",
+      "x": 26,
+      "y": 45,
+      "icon": {
+        "id": "Botania:altar"
+      },
+      "prerequisites": [
+        "Flower Child"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Petal Apothecary",
+          "longDescription": "The Petal Apothecary works same as allways, give it water and put the correct ingredients in, and then throw in Seeds. Interesting thing that many don\u0027t know, you can shift right click it with an empty hand while it\u0027s filled with water and you automatically put in the ingredients from the last thing you made.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:altar"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Botania:fertilizer",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "Life Through Flowers",
+      "description": "Some more of the mechanics added by Botania, mainly storing, moving, and using Mana.",
+      "x": 26,
+      "y": 75,
+      "icon": {
+        "id": "Botania:pool"
+      },
+      "prerequisites": [
+        "Petals and Water"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Pure Daisy",
+          "longDescription": "The Pure Daisy turns Stone into Livingrock and logs into Livingwood. These are very useful for crafting, and look quite nice for building. You can automate it using SFM\u0027s Block Gates or AE2\u0027s Formation and Annihilation Planes, among other things",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:specialFlower",
+                "nbt": "{type:\"puredaisy\"}"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Mana Spreader",
+          "longDescription": "Mana Spreaders are how you move Mana. Put it down, shift right click a Wand of the Forest in Bind Mode first on the Mana Spreader and then on the Mana Pool. Mana generating flowers bound to the Mana Spreader put the Mana in there, and then the Mana Spreader puts it into the Mana Pool, or whatever else it\u0027s pointed at.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:spreader"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Mana Pool",
+          "longDescription": "The Mana Pool is arguably the most important thing made by Livingrock. It is used to store Mana, which many things from Botania use as energy. You can craft things with it by throwing the ingredient in.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:pool"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Runic Altar",
+          "longDescription": "The Runic Altar is another of the crafting mechanics Botania offers. It requires you point a Mana Spreader at it, and then you throw all the ingredients onto it. Once it\u0027s done filling up with Mana, throw a Livingrock on it and right click it with a Wand of the Forest.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:runeAltar"
+              }
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "Botania:fertilizer",
+          "amount": 16
+        },
+        {
+          "id": "Botania:blackLotus",
+          "damage": 1,
+          "nbt": "{RepairCost:2,display:{Name:\"1/10 of a Mana Pool\"}}"
+        }
+      ]
+    },
+    {
+      "name": "Crafting Like a Magician",
+      "description": "The Arcane Worktable is one of the ways Thaumcraft adds for crafting things. Some things require Essentia in your wand, which you get by holding right click on a Node. See your Basic Information tab of the Thaumonomicon for details.",
+      "x": 59,
+      "y": 43,
+      "icon": {
+        "id": "Thaumcraft:blockTable",
+        "damage": 15
+      },
+      "prerequisites": [
+        "Entrance to the Arcane"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Get an Arcane Worktable",
+          "longDescription": "Right Click a Thaumcraft Table with a Wand to get the Arcane Worktable",
+          "items": [
+            {
+              "item": {
+                "id": "Thaumcraft:blockTable",
+                "damage": 15
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Research Table",
+          "longDescription": "The Research Table is how you learn how to make most Thaumcraft blocks and items. You have to unlock Research Notes in the Thaumonomicon using aspect points you get by scanning blocks, items, and especially Nodes using the Thaumometer. You have to scan things in a certain order. To make the Research table, place to Tables next to eachother and right-click with Scribing Tools. These will be used up as you do the research minigame (see the Thaumonomicon for details), and refill it with Ink Sacs to continue using them.",
+          "items": [
+            {
+              "item": {
+                "id": "Thaumcraft:ItemInkwell"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "Thaumcraft:blockTable"
+              },
+              "required": 2,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Thaumcraft:ItemResource",
+          "damage": 9,
+          "amount": 18
+        }
+      ]
+    },
+    {
+      "name": "Toil and Trouble",
+      "description": "The Witches Oven is how you get special Witchery Ingredients. Put Clay Jars in, some furnace fuel, and then saplings. Different saplings give different ingredients, as shown by NEI.",
+      "x": 60,
+      "y": 75,
+      "icon": {
+        "id": "witchery:witchesovenidle"
+      },
+      "prerequisites": [
+        "Crafting Like a Magician",
+        "Life Through Flowers"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Witches Oven",
+          "longDescription": "The Witches Oven requires Arcane Worktable crafting and Mana Pool conversion to make.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:witchesovenidle"
+              }
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "witchery:fumefunnel"
+        },
+        {
+          "id": "witchery:ingredient",
+          "damage": 27,
+          "amount": 16
+        }
+      ]
+    },
+    {
+      "name": "Nature\u0027s Magic",
+      "description": "The Witchery Altar gains Altar Power by having more nature stuff around it. You can also place stuff on top like a Wither Skull or a Candelabra. Check the wiki to see what is best.",
+      "x": 60,
+      "y": 105,
+      "icon": {
+        "id": "witchery:altar"
+      },
+      "prerequisites": [
+        "Toil and Trouble"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Altar",
+          "longDescription": "The Altar is a 3x2x1 multiblock, totalling 6 blocks.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:altar"
+              },
+              "required": 6,
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blood for the Blood God",
+      "description": "The Blood Altar is probably the most important part of Blood Magic. This will eventually be a giant multiblock. At the largest tier, tier 6, it takes up a 23x23x9 space.",
+      "x": 60,
+      "y": 135,
+      "icon": {
+        "id": "AWWayofTime:Altar"
+      },
+      "prerequisites": [
+        "Nature\u0027s Magic"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Blood Altar",
+          "longDescription": "I recommend checking the wiki and building the altar out of cobblestone, replacing it with what it actually needs as you get the blocks.",
+          "items": [
+            {
+              "item": {
+                "id": "AWWayofTime:Altar"
+              }
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Get the Sacrificial Orb",
+          "longDescription": "The Sacrificial Orb, when right clicked near a Blood Altar, removes a heart from your health and gives some Life Essence to the Altar.",
+          "items": [
+            {
+              "item": {
+                "id": "AWWayofTime:sacrificialKnife",
+                "nbt": "{sacrifice:0b}"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "minecraft:potion",
+          "damage": 8225,
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "So Many Altars",
+      "description": "The final altar on the list, the Infusion Altar from Thaumcraft. ",
+      "x": 60,
+      "y": 164,
+      "icon": {
+        "id": "Thaumcraft:blockStoneDevice",
+        "damage": 2
+      },
+      "prerequisites": [
+        "Blood for the Blood God"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Infusion Altar",
+          "longDescription": "See Infusion in the Artifice tab in your Thaumonomicon for more information on the Infusion Altar.",
+          "items": [
+            {
+              "item": {
+                "id": "Thaumcraft:blockStoneDevice",
+                "damage": 2
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "Thaumcraft:blockCosmeticSolid",
+                "damage": 6
+              },
+              "required": 4
+            },
+            {
+              "item": {
+                "id": "Thaumcraft:blockCosmeticSolid",
+                "damage": 7
+              },
+              "required": 4
+            },
+            {
+              "item": {
+                "id": "Thaumcraft:blockStoneDevice",
+                "damage": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tea\u0027s On!",
+      "description": "The Kettle is used to craft similar to Thaumcraft\u0027s Crucible. Set a fire underneath it (preferably using Netherrack), give it some water, and throw in the ingredients. Be extremely careful that you put in the correct ingredients, as they cannot be gotten back if you make a mistake, and some recipes are incredibly complicated. If the Kettle starts emitting white swirls and making noises, the brew is ready to take out. Right click with an empty bottle to bottle it.",
+      "x": 89,
+      "y": 75,
+      "icon": {
+        "id": "witchery:kettle"
+      },
+      "prerequisites": [
+        "Toil and Trouble"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Kettle",
+          "longDescription": "The Kettle can have water pumped into it automatically. You can get a chance of extras by wearing Witches\u0027 clothes.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:kettle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Moonshine and Sunshine",
+      "description": "The Distillery is yet another crafting mechanic from Witchery. It uses Altar Power to function, so it must be placed near an Altar with sufficient Altar Power.",
+      "x": 89,
+      "y": 105,
+      "icon": {
+        "id": "witchery:distilleryidle"
+      },
+      "prerequisites": [
+        "Nature\u0027s Magic"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make a Distillery",
+          "longDescription": "Place Clay Jars in the bottom slot, and the 2 ingredients in the slots above. The results are put into the slots to the right.",
+          "items": [
+            {
+              "item": {
+                "id": "witchery:distilleryidle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The World of Elves",
+      "description": "The Portal to Alfheim is a multiblock. It requires a pretty steady stream of Mana. The crafting recipe requires a tier 4 Blood Altar minimum.",
+      "x": 122,
+      "y": 134,
+      "icon": {
+        "id": "Botania:alfheimPortal"
+      },
+      "prerequisites": [
+        "Blood for the Blood God",
+        "Moonshine and Sunshine",
+        "Tea\u0027s On!"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up the Portal to Alfheim",
+          "longDescription": "Right click on the Elven Gateway Core to activate the Portal. Throw in certain items in to get other certain items out. See NEI or the Lexica Botania for details.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:pool"
+              },
+              "required": 2
+            },
+            {
+              "item": {
+                "id": "Botania:pylon",
+                "damage": 1
+              },
+              "required": 2
+            },
+            {
+              "item": {
+                "id": "Botania:livingwood"
+              },
+              "required": 8
+            },
+            {
+              "item": {
+                "id": "Botania:livingwood",
+                "damage": 5
+              },
+              "required": 3
+            },
+            {
+              "item": {
+                "id": "Botania:alfheimPortal"
+              }
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Botania:blackLotus",
+          "damage": 1,
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "Stabbing the Earth",
+      "description": "The Guardian of Gaia fight gives pretty good drops, which are used in certain crafting recipes. To make the Gaia Pylons, you need at least a Tier 5 Blood Altar.",
+      "x": 122,
+      "y": 169,
+      "icon": {
+        "id": "Botania:pylon",
+        "damage": 2
+      },
+      "prerequisites": [
+        "The World of Elves"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Set up Guardian of Gaia arena",
+          "longDescription": "See the upgraded Lexica Botania for details on how to make the arena.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:beacon"
+              }
+            },
+            {
+              "item": {
+                "id": "Botania:pylon",
+                "damage": 2
+              },
+              "required": 4
+            }
+          ]
+        }
+      ],
+      "rewardchoice": [
+        {
+          "id": "Botania:brewVial",
+          "nbt": "{brewKey:\"strength\"}"
+        },
+        {
+          "id": "Botania:brewVial",
+          "nbt": "{brewKey:\"regen\"}"
+        },
+        {
+          "id": "Botania:brewVial",
+          "nbt": "{brewKey:\"resistance\"}"
+        }
+      ]
+    },
+    {
+      "name": "...orcloth Strapped Silv...",
+      "description": "The Ultimate. The Alpha. The best dang wand this modpack has to offer. 1000 Essentia Capacity, 70% vis cost, a name that is 52 characters long! What CAN\u0027T this wand do?!",
+      "x": 60,
+      "y": 195,
+      "icon": {
+        "id": "Thaumcraft:WandCasting",
+        "damage": 100,
+        "nbt": "{cap:\"ICHOR\",rod:\"ICHORCLOTH\"}"
+      },
+      "prerequisites": [
+        "So Many Altars"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "longDescription": "To unlock Ichor research, you need to research ALL of regular Thaumcraft, and ALL non-Ichor related Thaumic Tinkerer research.",
+          "items": [
+            {
+              "item": {
+                "id": "Thaumcraft:WandCasting",
+                "damage": 100,
+                "nbt": "{cap:\"ICHOR\",rod:\"ICHORCLOTH\"}"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ],
+      "reward": [
+        {
+          "id": "Thaumcraft:blockAiry",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "name": "I Can Make What Now?!",
+      "description": "You did it! You beat Infinity Evolved: Expert Mode! You now have the ultimate bragging rights.",
+      "x": 92,
+      "y": 195,
+      "icon": {
+        "id": "Botania:pool",
+        "damage": 1
+      },
+      "prerequisites": [
+        "...orcloth Strapped Silv...",
+        "Stabbing the Earth"
+      ],
+      "tasks": [
+        {
+          "type": "DETECT",
+          "description": "Make the Creative Mana Pool",
+          "longDescription": "As one of the most powerful things available, this block has an INCREDIBLY hard recipe. It requires multiple very hard boss drops, every Botanical Rune, a fully charged Ichorium Adorned Ichorcloth Strapped Silverwood Wand, every Slate up to tier 5, and other stuff I guess. This block is an infinite source of Mana. Expect the infusion to last more than 20 minutes. Make ABSOLUTE SURE that your Infusion altar is as diddly-darn stable as it can be. Gaia Pylons are really good for stability.",
+          "items": [
+            {
+              "item": {
+                "id": "Botania:pool",
+                "damage": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Twilight Zone",
+      "description": "The Twilight Forest is a dimension filled with dungeons and magic. There is a strict progression you must go through if you want to explore everything this dimension has to offer. Beware, however. The Twilight Forest is fairly server intensive. If you are stuck, you can check the Twilight Forest\u0027s achievements page in the pause menu for detailed instructions.",
+      "x": 281,
+      "y": 16,
+      "icon": {
+        "id": "TwilightForest:tile.TFFirefly"
+      },
+      "tasks": [
+        {
+          "type": "LOCATION",
+          "description": "Go through Twilight Portal",
+          "longDescription": "To make the portal to the Twilight Forest, make a 2x2x1 of water in the ground. Surround it with plants, like flowers or saplings. Lastly, throw a Diamond into the water. If it worked, it will create a strike of lightning and the portal will be created. Simply jump in to travel through it!",
+          "locations": [
+            {
+              "name": "Twilight Forest",
+              "icon": {
+                "id": "minecraft:diamond"
+              },
+              "x": 168,
+              "y": 69,
+              "z": -442,
+              "dim": -7,
+              "radius": -1
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Make a Magic Map",
+          "longDescription": "The Magic Map is the key to finding landmarks and dungeons in the Twilight Forest. Right click on the Empty Magic Map to start scribing the nearby area. It will show you biomes and dungeons, but not the terrain itself, like a regular Map. Ravens tend to spawn near the Obsidian pillars, and Torchberries grow on the underside of Stone.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.emptyMagicMap"
+              },
+              "precision": "FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Slay the Naga",
+          "longDescription": "The first boss you can fight is the Naga. The Naga can be found in the Twilight Forest (the biome, as well as the dimension) or the Mushroom Forest biome. The Magical Map will show the Naga as a green circle with 2 red eyes. The dungeon is walled in, with patterns of snakes adorning the walls. The Naga itself is a giant, multi-segmented snake. It slithers around the arena and charging down players within. In total, the Naga has 250 health (125 hearts), and does 9 damage (4.5 hearts) with each attack. As you fight the Naga, it will get shorter and faster until it dies. It will drop the Naga Trophy and several Naga Scales. The player must pick both up to unlock the Lich Tower.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.trophy",
+                "damage": 1
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "TwilightForest:item.nagaScale"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Defeat the Twilight Lich",
+          "longDescription": "The Twilight Lich lives in the Mushroom/Twilight Forest biomes, in the Lich Tower. The Magic Map shows the Lich as a white circle with 2 red eyes and a gold crown. You cannot enter the Lich Tower until you have defeated the Naga and collected its scales. You have to climb the Lich Tower to the very top, where you can find the Lich and its minions. The Lich has 3 stages: In the first stage, the Lich and its 2 Twilight Lich Shadows will shoot slow-moving projectiles at the player. Dodge the fireballs and reflect the Ender Pearl projectiles back at the Lich by hitting them (similar to Ghasts) to remove the Lich\u0027s shields. While the Lich has its shields, it takes no damage. In the second stage, the Lich will spawn special Zombies to attack the player. Also, the Twiligth Lich Shadows will leave, and will not return. Kill the Zombies to progress to the next stage. In the third and final stage, the Lich will equip a Gold Sword and attack. Each hit will do 4.5 hearts of damage unarmored. Killing the Lich in its third form will drop the Lich Trophy and one of 3 scepters. The Scepter of Twilight will fire the same projectile the Lich does in the first stage, dealing up to 3 hearts of damage, with a chance of bypassing armor. The Scepter of Life Draining damages mobs as you hold right click, while healing you for a fraction of the damage dealt. Finally, the Zombie Scepter will summon Zombie minions, like the second stage of the Lich fight. They will fight hostile mobs for you, excluding Creepers. Each scepter has durability and their own recipes to recharge. They will not break, just stop working until they are recharged, so you don\u0027t have to worry. The player must pick up the Lich Trophy and any of the Scepters to progress to the next boss.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.trophy",
+                "damage": 2
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Kill the Minoshroom",
+          "longDescription": "The Minoshroom spawns in the lowest floor of the Labyrinth. The Labyrinth can be found in the Twilight Swamp biome, which surrounds the Fire Swamp. The Magic Map shows it as a vaguely green-white square. Bring LOTS of Torches, it\u0027s very dark in the Labyrinth. The blocks the Labyrinth is made of are extremely resistant to mining, so it is not recommended to try to cheat your way through. The Labyrinth is filled with Minotaurs, Pinch Beetles, Slime Beetles, Fire Beetles, and Maze Slimes, so make sure you\u0027re prepared for a fight. You can find chests with Maze Map Focuses, which you can craft into Maze Maps. Once you make your way through the Labyrinth and defeat the Minoshroom (which is fairly simple to do, just hit it until it dies) you will get some  Meef Stroganoff and the Minotaur Axe. The Meef Stroganoff is required to enter the Fire Swamp.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.meefStroganoff"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Slay the Hydra",
+          "longDescription": "The Hydra spawns in the middle of Fire Swamp biomes. There aren\u0027t any dungeons to face, the Hydra is simply in the middle of the biome. The Magic Map shows it as a dark blue-green circle with 2 violet eyes and a lighter blue frill at the top. The Hydra is a 3 headed dragon that will bite at the player, as well as shoot fire and explosive projectiles at them. The Hydra can be damaged by projectiles while it\u0027s mouth is open and shot at. When a head is damaged enough, it will explode and be replaced with two new heads. Once the Hydra is defeated, it will drop a Hydra Trophy, Fiery Blood, and Hydra Chops. The Fiery Blood is required to enter the Dark Forest biome.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.trophy"
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "TwilightForest:item.fieryBlood"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Defeat the Phantom Knight",
+          "longDescription": "The Phantom Knight spawns in the Goblin Knight Stronghold in the Dark Forest Biome. The Magic Map shows it as a horned helmet. To enter the Stronghold, you must find the Latent Trophy Pedestal and place a Hydra Trophy on it. If it says you are unworthy, make sure you have the \"Of One Blood\" achievement, which is acquired by picking up Fiery Blood. A task where the player needs specific items. These do not have to be handed in, having them in one\u0027s inventory is enough. Finding the Phantom Knight is tough, so bring Torches. The Phantom Knight spawns along with several doubles, all of which must be killed to win. Once defeated, it will spawn a chest with loot in it, which is needed to approach the Dark Tower.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.phantomHelm"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Shoot down the Ur-Ghast",
+          "longDescription": "The Ur-Ghast spawns in the Dark Forest Center biome, at the very top of the Dark Tower. The Magic Map shows it as an off-white square with tendrils at the bottom. The Dark Tower is a very interesting dungeon in that it has several puzzles to surpass (if you don\u0027t have a means of flight, in which case you can just fly to the top). Enter by right-clicking on a door made of Reappearing Blocks at the bottom. Some of the Towerwood looks a bit singed, that is Infested Towerwood. Breaking Infested Towerwood will spawn a Towerwood Borer, which drops Borer Essence, which is an ingredient in Carminite. Several parts of the Dark Tower use Anti-Builders, which disallow you to place or permanently remove blocks. Blocks placed will be dropped, and blocks destroyed will be replaced with Anti-Built Blocks. Near the top is a puzzle involving Carminite Builders. These turn on with a redstone signal, given by the lever nearby, and will build blocks in the location the player is looking. So, the strategy here is to give it a redstone signal, follow the blocks as they\u0027re being placed, and turn your head to change direction to the next platform. At the top of this puzzle is a couple buffer floors, giving the crafting recipes for Carminite and Carminite related blocks. There is also a nearly finished Carminite Reactor Finish it by extending the pistons so that the redstone blocks on all sides touch the Reactor. The Ur-Ghast cannot be harmed with melee attacks, so you must use a bow or reflect it\u0027s fireballs back at it. The easiest way to kill it is through the 4 Ghast Traps at the top of the Dark Tower. The Ghast Traps are charged by killing Carminite Ghastlings near them. About 3 Carminite Ghastlings will charge the Ghast Trap, allowing them to work with a redstone signal. Wait until the Ur-Ghast is directly above the Ghast Trap, then stand on the pressure plate to activate it. It will spend its charge to harm the Ur-Ghast while keeping it in place, allowing the player to shoot it easily. Once the Ur-Ghast is defeated, it will spawn a chest with loot in the center room at the top. Drop and pick up the Ur-Ghast Trophy and the Fiery Tears to get the achievement that allows access to the Snowy Forest biome.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.trophy",
+                "damage": 3
+              },
+              "precision": "NBT_FUZZY"
+            },
+            {
+              "item": {
+                "id": "TwilightForest:item.fieryTears"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Thaw the Alpha Yeti",
+          "longDescription": "The Alpha Yeti spawns in the Snowy Forest biome, in a cave with Packed Ice. The Magic Map shows it as a white semicircle. The Alpha Yeti is immune to ranged attacks, and can throw ice blocks that slow and hurt players. During the fight, the Alpha Yeti can flail, flinging nearby players away. There are also several regular Yeti in the cave. The Alpha Yeti dops Alpha Yeti Fur, which is needed to enter the Ice Tower, along with Ice Bombs.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.alphaFur"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Dethrone the Snow Queen",
+          "longDescription": "The Snow Queen sits atop the Aurora Tower in the Twilight Glacier Biome. The Magic Map shows it as a white pillar, despite the fact that the Aurora Tower itself is made of color-changing Aurora Blocks. Climb the Aurora Tower similarly to how you climbed the Dark Tower. Inside you can fight Stable and Unstable Ice Cores and Snow Guardians. The Snow Queen herself sits atop a cloud of ice at the top of the Aurora Tower. She will drift up and down, and the cloud will block damage, so whe can only be hit with melee when on the floor (or if the player is flying). She will attempt to slam the player with her ice cloud, so be careful. Once defeated, she drops the Tri-Bow and the Snow Queen Trophy, which allows the player to traverse the Highlands and Thornlands biomes.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.trophy",
+                "damage": 4
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Pay the Troll toll",
+          "longDescription": "The Highlands Biome essentially has 2 parts: The Cloud Cottage and the Troll Cave. The Troll Cave is filled with Trolls, fairly easy monsters at this point. Also inside the Troll cave is a Giant Obsidian box, and a regular obsidian box. Break the regular Obsidian Box and collect the Magic Beans and Uberous Soil inside. Leave the Troll Cave, and look up at the Cloud Cottage in the sky. Go to just under the edge of the cloud, place the Uberous Soil, and plant the Magic Beans on it to spawn a Huge Stalk to climb your way up to the Cloud Cottage. The Cloud Cottage has a Giant that must be murdered in order to attain the Giant\u0027s Pickaxe it holds. The Giant Pickaxe allows you to mine giant blocks, specifically the Giant Obsidian back in the cave. Inside the Giant Obsidian box is a Lamp of Cinders, which must be dropped and picked up to unlock the Thornlands biome.",
+          "items": [
+            {
+              "item": {
+                "id": "TwilightForest:item.lampOfCinders"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        },
+        {
+          "type": "DETECT",
+          "description": "Storm the Castle",
+          "longDescription": "The Thornlands Biome is full of Thorns that damage the player upon touch. The Lamp of Cinders helps get past this by burning the Thorns. Right click directly on the Thorns to burn them, or hold and let go to burn in an area around you. Burnt Thorns can be walked right through. Once you reach the Castle, nerdpole up (or bring another Giant Stalk) to the main building. There\u0027s no way up through the other towers, they\u0027re completly solid at the base, so don\u0027t bother trying there. Unfortunately, Twilight Forest is still a WIP mod, and there is no final boss. The Castle is mostly empty, no monsters or puzzles inside, so just climb to the top and get the sign. I suppose this could make a pretty cool looking base, if you don\u0027t mind a bit of rennovation. Congratulations! You\u0027ve finished the Twilight Forest\u0027s progression! That isn\u0027t to say there\u0027s not anything else to do, though.",
+          "items": [
+            {
+              "item": {
+                "id": "minecraft:sign"
+              },
+              "precision": "NBT_FUZZY"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reputationBar": []
+}
