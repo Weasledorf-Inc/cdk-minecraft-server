@@ -16,6 +16,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-s3',
+    '@aws-cdk/aws-s3-deployment',
     '@aws-cdk/aws-apigatewayv2',
     '@aws-cdk/aws-apigatewayv2-integrations',
     '@aws-cdk/aws-lambda-python',
@@ -28,11 +30,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     // ...cdkAlphaDependencies,
     '@aws-sdk/client-ec2',
     'cdk-ecr-deployment',
-    'fs-extra',
+  ],
+  bundledDeps: [
+    '@aws-sdk/client-ec2',
   ],
   devDeps: [
     '@types/aws-lambda',
-    '@types/fs-extra',
   ],
 });
 project.synth();

@@ -4,7 +4,7 @@ import * as ec2 from '@aws-cdk/aws-ec2';
 import * as ecr from '@aws-cdk/aws-ecr';
 import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
 import * as iam from '@aws-cdk/aws-iam';
-import { Construct, RemovalPolicy, SymlinkFollowMode } from '@aws-cdk/core';
+import { Aws, Construct, RemovalPolicy } from '@aws-cdk/core';
 // import * as ecrdeploy from 'cdk-ecr-deployment';
 
 export interface ServerInstanceProps {
@@ -46,14 +46,24 @@ export class ServerInstance extends Construct {
     this.ec2InstanceSize = props.ec2InstanceSize ?? ec2.InstanceSize.LARGE;
     this.fullInstanceType = new ec2.InstanceType(`${this.ec2InstanceClass}.${this.ec2InstanceSize}`);
 
-    this.customUserDataScript = props.customUserDataScript ?? generateUserDataScript();
+
     this.ec2Ami = ec2.MachineImage.latestAmazonLinux();
     this.instanceRole = new iam.Role(this, 'ec2-pull-ecr', {
       assumedBy: new iam.ServicePrincipal('ec2.amazonaws.com'),
     });
     this.instanceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonSSMManagedInstanceCore'));
-    // EC2
+    this.instanceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AdministratorAccess')); // TODO: NEED TO GIVE ACCESS TO ONLY ECR ASSETS
 
+    // Docker
+    fs.copyFileSync(this.serverZipPath, path.join(__dirname, '../docker-image/modpack.zip'));
+    const repoName = 'image-hub';
+
+    this.dockerFile = new DockerImageAsset(this, 'docker-image', {
+      directory: path.join(__dirname, '../docker-image'),
+    });
+
+    // EC2
+    this.customUserDataScript = props.customUserDataScript ?? generateUserDataScript(this.dockerFile.imageUri);
     this.defaultSecurityGroup = new ec2.SecurityGroup(this, 'default-security-group', {
       securityGroupName: 'sec-group',
       vpc: this.vpc,
@@ -78,41 +88,32 @@ export class ServerInstance extends Construct {
 
 
     // ECR
-    const repoName = 'image-hub';
+
     this.ecrRepo = new ecr.Repository(this, 'ecr-repo', {
       repositoryName: repoName,
       removalPolicy: RemovalPolicy.DESTROY,
     });
     this.ecrRepo.grantPull(this.instanceRole);
 
-    fs.copyFile(this.serverZipPath, path.join(__dirname, '../docker-image/modpack.zip'), function (err) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Copy Success!');
-      }
-    });
 
-    this.dockerFile = new DockerImageAsset(this, 'docker-image', {
-      directory: path.join(__dirname, '../docker-image'),
-      followSymlinks: SymlinkFollowMode.ALWAYS,
-    });
-
-    // new ecrdeploy.ECRDeployment(this, 'deploy-docker-image', {
+    // TODO: Fucking fix
+    // new ecrdeploy.ECRDeployment(this, 'whycome', {
     //   src: new ecrdeploy.DockerImageName(this.dockerFile.imageUri),
-    //   dest: new ecrdeploy.DockerImageName(`${this.ecrRepo.repositoryUri}/mine-craft:version`),
+    //   dest: new ecrdeploy.DockerImageName(`${Aws.ACCOUNT_ID}.dkr.ecr.${Aws.REGION}.com/${repoName}:latest`),
     // });
   }
 }
 
-function generateUserDataScript(): ec2.UserData {
+function generateUserDataScript(serverDockerImage: string): ec2.UserData {
   let userData = ec2.UserData.forLinux({});
   userData.addCommands(
     'sudo yum update -y',
     'sudo yum install -y docker',
     'sudo service docker start',
     'sudo usermod -a -G docker ec2-user',
+    `aws ecr get-login-password --region ${Aws.REGION} | docker login --username AWS --password-stdin ${Aws.ACCOUNT_ID}.dkr.ecr.${Aws.REGION}.amazonaws.com`,
+    `sudo docker pull ${serverDockerImage}`,
+    `sudo docker run -d --restart always -p 25565:25565 --name mc-server ${serverDockerImage}`,
   );
-
   return userData;
 }
