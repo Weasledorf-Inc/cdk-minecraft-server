@@ -8,20 +8,20 @@ import { Construct, Stack } from '@aws-cdk/core';
 import { ServerInstance } from './server-instance-constuct';
 
 export interface ManagementAPIProps {
-  apiName: string;
-  serverInstance: ServerInstance;
+  readonly apiName: string;
+  readonly serverInstance: ServerInstance;
 }
 
 export class ManagementAPI extends Construct {
-  public readonly managementAPI: apigatewayV2.HttpApi;
-  public readonly getStatusLambda: lamdbaPython.PythonFunction;
+  public readonly managementAPIGateway: apigatewayV2.HttpApi;
+  public readonly statusLambda: lamdbaPython.PythonFunction;
   public readonly startServerLambda: lamdbaPython.PythonFunction;
   public readonly shutdownServerLambda: lamdbaPython.PythonFunction;
 
   constructor(scope: Construct, id: string, props: ManagementAPIProps) {
     super(scope, id);
 
-    this.managementAPI = new apigatewayV2.HttpApi(this, 'management-api', {
+    this.managementAPIGateway = new apigatewayV2.HttpApi(this, 'management-api', {
       apiName: props.apiName,
     });
 
@@ -30,7 +30,7 @@ export class ManagementAPI extends Construct {
       REGION: Stack.of(this).region,
     };
 
-    this.getStatusLambda = new lambdaNode.NodejsFunction(this, 'get-server-status', {
+    this.statusLambda = new lambdaNode.NodejsFunction(this, 'get-server-status', {
       entry: path.join(__dirname, './handlers/get_server_status.ts'),
       environment: { ...commonEnvironmentVariables },
     });
@@ -45,7 +45,7 @@ export class ManagementAPI extends Construct {
       environment: { ...commonEnvironmentVariables },
     });
 
-    this.managementAPI.addRoutes({
+    this.managementAPIGateway.addRoutes({
       path: '/start',
       methods: [apigatewayV2.HttpMethod.GET],
       integration: new integrations.LambdaProxyIntegration({
@@ -53,7 +53,7 @@ export class ManagementAPI extends Construct {
       }),
     });
 
-    this.managementAPI.addRoutes({
+    this.managementAPIGateway.addRoutes({
       path: '/stop',
       methods: [apigatewayV2.HttpMethod.GET],
       integration: new integrations.LambdaProxyIntegration({
@@ -61,15 +61,15 @@ export class ManagementAPI extends Construct {
       }),
     });
 
-    this.managementAPI.addRoutes({
+    this.managementAPIGateway.addRoutes({
       path: '/status',
       methods: [apigatewayV2.HttpMethod.GET],
       integration: new integrations.LambdaProxyIntegration({
-        handler: this.getStatusLambda,
+        handler: this.statusLambda,
       }),
     });
 
-    this.getStatusLambda.role?.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEC2FullAccess'));
+    this.statusLambda.role?.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEC2FullAccess'));
     this.startServerLambda.role?.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEC2FullAccess'));
     this.shutdownServerLambda.role?.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEC2FullAccess'));
   }

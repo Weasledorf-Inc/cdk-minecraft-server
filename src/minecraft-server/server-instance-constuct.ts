@@ -8,14 +8,14 @@ import { Aws, Construct, RemovalPolicy } from '@aws-cdk/core';
 // import * as ecrdeploy from 'cdk-ecr-deployment';
 
 export interface ServerInstanceProps {
-  gameServerName: string;
-  serverZipPath: string;
-  vpc: ec2.IVpc;
-  ec2InstanceClass?: ec2.InstanceClass;
-  ec2InstanceName: string;
-  ec2InstanceSize?: ec2.InstanceSize;
-  customUserDataScript?: ec2.UserData;
-  additionalSecurityGroups?: ec2.ISecurityGroup[];
+  readonly gameServerName: string;
+  readonly serverZipPath: string;
+  readonly vpc: ec2.IVpc;
+  readonly ec2InstanceClass?: ec2.InstanceClass;
+  readonly ec2InstanceName: string;
+  readonly ec2InstanceSize?: ec2.InstanceSize;
+  readonly customUserDataScript?: ec2.UserData;
+  readonly additionalSecurityGroups?: ec2.ISecurityGroup[];
 }
 
 export class ServerInstance extends Construct {

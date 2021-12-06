@@ -6,13 +6,19 @@ const { awscdk } = require('projen');
 //   '@aws-cdk/aws-apigatewayv2-integrations-alpha',
 // ].map(x => `${x}@${cdkAlphaVersions}`);
 
+const projectName = 'cdk-minecraft-server';
+
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Hasan Abu-Rayyan',
   authorAddress: 'hasanaburayyan21@gmail.com',
   cdkVersion: '1.34.0',
   defaultReleaseBranch: 'main',
-  name: 'minecraft-server-construct',
-  repositoryUrl: 'https://github.com/hasanaburayyan/cdk-minecraft-server.git',
+  name: projectName,
+  repositoryUrl: 'https://github.com/Weasledorf-Inc/cdk-minecraft-server',
+  publishToPypi: {
+    distName: projectName,
+    module: 'cdk_minecraft_server',
+  },
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-ec2',
