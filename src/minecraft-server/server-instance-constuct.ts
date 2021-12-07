@@ -4,7 +4,7 @@ import * as ec2 from '@aws-cdk/aws-ec2';
 import * as ecr from '@aws-cdk/aws-ecr';
 import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
 import * as iam from '@aws-cdk/aws-iam';
-import { Aws, Construct, RemovalPolicy } from '@aws-cdk/core';
+import { AssetStaging, Aws, BundlingOutput, Construct, DockerImage, RemovalPolicy } from '@aws-cdk/core';
 // import * as ecrdeploy from 'cdk-ecr-deployment';
 
 export interface ServerInstanceProps {
@@ -55,11 +55,34 @@ export class ServerInstance extends Construct {
     this.instanceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AdministratorAccess')); // TODO: NEED TO GIVE ACCESS TO ONLY ECR ASSETS
 
     // Docker
-    fs.copyFileSync(this.serverZipPath, path.join(__dirname, '../docker-image/modpack.zip'));
     const repoName = 'image-hub';
 
+    const serverZipDirectory = path.parse(this.serverZipPath).dir;
+    const serverZipFile = path.parse(this.serverZipPath).base;
+
+    const serverAsset = new AssetStaging(this, 'docker-file-asset', {
+      sourcePath: serverZipDirectory,
+      bundling: {
+        image: DockerImage.fromRegistry('openjdk:8'),
+        command: [
+          'sh', '-c', 'cp * /asset-output',
+        ],
+        outputType: BundlingOutput.NOT_ARCHIVED,
+      },
+    });
+
+    fs.writeFileSync(`${serverAsset.absoluteStagedPath}/Dockerfile`, `
+FROM openjdk:8
+RUN ls -ltra
+COPY ${serverZipFile} /app/modpack.zip
+WORKDIR /app
+RUN unzip modpack.zip && chmod +x ServerStart.sh && echo eula=true > eula.txt
+RUN cat eula.txt
+CMD  ./ServerStart.sh
+    `);
+
     this.dockerFile = new DockerImageAsset(this, 'docker-image', {
-      directory: path.join(__dirname, '../docker-image'),
+      directory: serverAsset.absoluteStagedPath,
     });
 
     // EC2
