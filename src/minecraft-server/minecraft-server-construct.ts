@@ -16,12 +16,21 @@ export interface MinecraftServerProps {
   readonly gameServerName: string;
   /**
      * Path to zip folder for Minecraft server can be in s3 or local
+     * If this is not set then the serverInstallScript must be!
      *
      * @example
      *  /some/directory/location/minecraft.zip
      *  s3://somebucket/minecraft.zip
      */
-  readonly serverZipPath: string;
+  readonly serverZipPath?: string;
+  /**
+   * Path to server install script.
+   * If this is not set then the serverZipPath must be!
+   *
+   * @example
+   *  /some/directory/serverinstall_23_99
+   */
+  readonly serverInstallScript?: string;
   /**
      * The VPC to use for creating the Minecraft server's
      *
@@ -79,6 +88,7 @@ export class MinecraftServer extends Construct {
       ec2InstanceName: props.ec2InstanceName ?? props.gameServerName,
       gameServerName: props.gameServerName,
       serverZipPath: props.serverZipPath,
+      serverInstallScript: props.serverInstallScript,
       additionalSecurityGroups: props.additionalSecurityGroups,
       customUserDataScript: props.customUserDataScript,
       ec2InstanceSize: props.ec2InstanceSize,

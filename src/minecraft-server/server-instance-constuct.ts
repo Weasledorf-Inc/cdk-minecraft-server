@@ -1,16 +1,16 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as ecr from '@aws-cdk/aws-ecr';
 import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
 import * as iam from '@aws-cdk/aws-iam';
-import { AssetStaging, Aws, BundlingOutput, Construct, DockerImage, RemovalPolicy } from '@aws-cdk/core';
+import { Aws, Construct, RemovalPolicy } from '@aws-cdk/core';
+import { ServerImageFactory } from './server-image-factory';
 // import * as ecrdeploy from 'cdk-ecr-deployment';
 
 export interface ServerInstanceProps {
-  readonly gameServerName: string;
-  readonly serverZipPath: string;
   readonly vpc: ec2.IVpc;
+  readonly gameServerName: string;
+  readonly serverZipPath?: string;
+  readonly serverInstallScript?: string;
   readonly ec2InstanceClass?: ec2.InstanceClass;
   readonly ec2InstanceName: string;
   readonly ec2InstanceSize?: ec2.InstanceSize;
@@ -31,8 +31,9 @@ export class ServerInstance extends Construct {
   public readonly instanceRole: iam.Role;
   public readonly defaultSecurityGroup: ec2.ISecurityGroup;
   public readonly ecrRepo: ecr.Repository;
-  public readonly dockerFile: DockerImageAsset;
-  public readonly serverZipPath: string;
+  public readonly dockerImageAsset?: DockerImageAsset;
+  public readonly serverZipPath?: string;
+  public readonly serverInstallScript?: string;
 
   constructor(scope: Construct, id: string, props: ServerInstanceProps) {
     super(scope, id);
@@ -54,39 +55,25 @@ export class ServerInstance extends Construct {
     this.instanceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonSSMManagedInstanceCore'));
     this.instanceRole.addManagedPolicy(iam.ManagedPolicy.fromAwsManagedPolicyName('AdministratorAccess')); // TODO: NEED TO GIVE ACCESS TO ONLY ECR ASSETS
 
-    // Docker
     const repoName = 'image-hub';
 
-    const serverZipDirectory = path.parse(this.serverZipPath).dir;
-    const serverZipFile = path.parse(this.serverZipPath).base;
+    // Docker
+    const imageFactory = new ServerImageFactory(this);
 
-    const serverAsset = new AssetStaging(this, 'docker-file-asset', {
-      sourcePath: serverZipDirectory,
-      bundling: {
-        image: DockerImage.fromRegistry('openjdk:8'),
-        command: [
-          'sh', '-c', 'cp * /asset-output',
-        ],
-        outputType: BundlingOutput.NOT_ARCHIVED,
-      },
-    });
-
-    fs.writeFileSync(`${serverAsset.absoluteStagedPath}/Dockerfile`, `
-FROM openjdk:8
-RUN ls -ltra
-COPY ${serverZipFile} /app/modpack.zip
-WORKDIR /app
-RUN unzip modpack.zip && chmod +x ServerStart.sh && echo eula=true > eula.txt
-RUN cat eula.txt
-CMD  ./ServerStart.sh
-    `);
-
-    this.dockerFile = new DockerImageAsset(this, 'docker-image', {
-      directory: serverAsset.absoluteStagedPath,
-    });
+    if (props.serverZipPath) {
+      this.dockerImageAsset = imageFactory.buildFromServerZipPath({
+        serverZipPath: props.serverZipPath!,
+      });
+    } else if (props.serverInstallScript) {
+      this.dockerImageAsset = imageFactory.buildFromServerInstallScript({
+        serverInstallScript: props.serverInstallScript,
+      });
+    } else {
+      throw new Error('You Must Provide Either A serverZipPath or serverInstallScript');
+    }
 
     // EC2
-    this.customUserDataScript = props.customUserDataScript ?? generateUserDataScript(this.dockerFile.imageUri);
+    this.customUserDataScript = props.customUserDataScript ?? generateUserDataScript(this.dockerImageAsset!.imageUri);
     this.defaultSecurityGroup = new ec2.SecurityGroup(this, 'default-security-group', {
       securityGroupName: 'sec-group',
       vpc: this.vpc,

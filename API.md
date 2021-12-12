@@ -204,7 +204,6 @@ new ServerInstance(scope: Construct, id: string, props: ServerInstanceProps)
 | --- | --- | --- |
 | [`customUserDataScript`](#cdkminecraftserverserverinstancepropertycustomuserdatascript)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.UserData`](#@aws-cdk/aws-ec2.UserData) | *No description.* |
 | [`defaultSecurityGroup`](#cdkminecraftserverserverinstancepropertydefaultsecuritygroup)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.ISecurityGroup`](#@aws-cdk/aws-ec2.ISecurityGroup) | *No description.* |
-| [`dockerFile`](#cdkminecraftserverserverinstancepropertydockerfile)<span title="Required">*</span> | [`@aws-cdk/aws-ecr-assets.DockerImageAsset`](#@aws-cdk/aws-ecr-assets.DockerImageAsset) | *No description.* |
 | [`ec2Ami`](#cdkminecraftserverserverinstancepropertyec2ami)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.IMachineImage`](#@aws-cdk/aws-ec2.IMachineImage) | *No description.* |
 | [`ec2Instance`](#cdkminecraftserverserverinstancepropertyec2instance)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.Instance`](#@aws-cdk/aws-ec2.Instance) | *No description.* |
 | [`ec2InstanceClass`](#cdkminecraftserverserverinstancepropertyec2instanceclass)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.InstanceClass`](#@aws-cdk/aws-ec2.InstanceClass) | *No description.* |
@@ -214,8 +213,10 @@ new ServerInstance(scope: Construct, id: string, props: ServerInstanceProps)
 | [`fullInstanceType`](#cdkminecraftserverserverinstancepropertyfullinstancetype)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.InstanceType`](#@aws-cdk/aws-ec2.InstanceType) | *No description.* |
 | [`gameServerName`](#cdkminecraftserverserverinstancepropertygameservername)<span title="Required">*</span> | `string` | *No description.* |
 | [`instanceRole`](#cdkminecraftserverserverinstancepropertyinstancerole)<span title="Required">*</span> | [`@aws-cdk/aws-iam.Role`](#@aws-cdk/aws-iam.Role) | *No description.* |
-| [`serverZipPath`](#cdkminecraftserverserverinstancepropertyserverzippath)<span title="Required">*</span> | `string` | *No description.* |
 | [`vpc`](#cdkminecraftserverserverinstancepropertyvpc)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.IVpc`](#@aws-cdk/aws-ec2.IVpc) | *No description.* |
+| [`dockerImageAsset`](#cdkminecraftserverserverinstancepropertydockerimageasset) | [`@aws-cdk/aws-ecr-assets.DockerImageAsset`](#@aws-cdk/aws-ecr-assets.DockerImageAsset) | *No description.* |
+| [`serverInstallScript`](#cdkminecraftserverserverinstancepropertyserverinstallscript) | `string` | *No description.* |
+| [`serverZipPath`](#cdkminecraftserverserverinstancepropertyserverzippath) | `string` | *No description.* |
 
 ---
 
@@ -236,16 +237,6 @@ public readonly defaultSecurityGroup: ISecurityGroup;
 ```
 
 - *Type:* [`@aws-cdk/aws-ec2.ISecurityGroup`](#@aws-cdk/aws-ec2.ISecurityGroup)
-
----
-
-##### `dockerFile`<sup>Required</sup> <a name="cdk-minecraft-server.ServerInstance.property.dockerFile" id="cdkminecraftserverserverinstancepropertydockerfile"></a>
-
-```typescript
-public readonly dockerFile: DockerImageAsset;
-```
-
-- *Type:* [`@aws-cdk/aws-ecr-assets.DockerImageAsset`](#@aws-cdk/aws-ecr-assets.DockerImageAsset)
 
 ---
 
@@ -339,16 +330,6 @@ public readonly instanceRole: Role;
 
 ---
 
-##### `serverZipPath`<sup>Required</sup> <a name="cdk-minecraft-server.ServerInstance.property.serverZipPath" id="cdkminecraftserverserverinstancepropertyserverzippath"></a>
-
-```typescript
-public readonly serverZipPath: string;
-```
-
-- *Type:* `string`
-
----
-
 ##### `vpc`<sup>Required</sup> <a name="cdk-minecraft-server.ServerInstance.property.vpc" id="cdkminecraftserverserverinstancepropertyvpc"></a>
 
 ```typescript
@@ -356,6 +337,36 @@ public readonly vpc: IVpc;
 ```
 
 - *Type:* [`@aws-cdk/aws-ec2.IVpc`](#@aws-cdk/aws-ec2.IVpc)
+
+---
+
+##### `dockerImageAsset`<sup>Optional</sup> <a name="cdk-minecraft-server.ServerInstance.property.dockerImageAsset" id="cdkminecraftserverserverinstancepropertydockerimageasset"></a>
+
+```typescript
+public readonly dockerImageAsset: DockerImageAsset;
+```
+
+- *Type:* [`@aws-cdk/aws-ecr-assets.DockerImageAsset`](#@aws-cdk/aws-ecr-assets.DockerImageAsset)
+
+---
+
+##### `serverInstallScript`<sup>Optional</sup> <a name="cdk-minecraft-server.ServerInstance.property.serverInstallScript" id="cdkminecraftserverserverinstancepropertyserverinstallscript"></a>
+
+```typescript
+public readonly serverInstallScript: string;
+```
+
+- *Type:* `string`
+
+---
+
+##### `serverZipPath`<sup>Optional</sup> <a name="cdk-minecraft-server.ServerInstance.property.serverZipPath" id="cdkminecraftserverserverinstancepropertyserverzippath"></a>
+
+```typescript
+public readonly serverZipPath: string;
+```
+
+- *Type:* `string`
 
 ---
 
@@ -418,14 +429,15 @@ const minecraftServerProps: MinecraftServerProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | [`gameServerName`](#cdkminecraftserverminecraftserverpropspropertygameservername)<span title="Required">*</span> | `string` | Name for Minecraft server. |
-| [`serverZipPath`](#cdkminecraftserverminecraftserverpropspropertyserverzippath)<span title="Required">*</span> | `string` | Path to zip folder for Minecraft server can be in s3 or local. |
 | [`vpc`](#cdkminecraftserverminecraftserverpropspropertyvpc)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.IVpc`](#@aws-cdk/aws-ec2.IVpc) | The VPC to use for creating the Minecraft server's. |
 | [`additionalSecurityGroups`](#cdkminecraftserverminecraftserverpropspropertyadditionalsecuritygroups) | [`@aws-cdk/aws-ec2.ISecurityGroup`](#@aws-cdk/aws-ec2.ISecurityGroup)[] | Additional security groups. |
 | [`customUserDataScript`](#cdkminecraftserverminecraftserverpropspropertycustomuserdatascript) | [`@aws-cdk/aws-ec2.UserData`](#@aws-cdk/aws-ec2.UserData) | Custom user data script. |
 | [`ec2InstanceClass`](#cdkminecraftserverminecraftserverpropspropertyec2instanceclass) | [`@aws-cdk/aws-ec2.InstanceClass`](#@aws-cdk/aws-ec2.InstanceClass) | The ec2 instance type for hosting the minecraft server. |
 | [`ec2InstanceName`](#cdkminecraftserverminecraftserverpropspropertyec2instancename) | `string` | Name to be given to EC2 instance where minecraft server will run. |
 | [`ec2InstanceSize`](#cdkminecraftserverminecraftserverpropspropertyec2instancesize) | [`@aws-cdk/aws-ec2.InstanceSize`](#@aws-cdk/aws-ec2.InstanceSize) | The ec2 instance size for hosting the minecraft server. |
+| [`serverInstallScript`](#cdkminecraftserverminecraftserverpropspropertyserverinstallscript) | `string` | Path to server install script. |
 | [`serverManagementAPI`](#cdkminecraftserverminecraftserverpropspropertyservermanagementapi) | `boolean` | Whether or not the server management API should be created as part of the deployment. |
+| [`serverZipPath`](#cdkminecraftserverminecraftserverpropspropertyserverzippath) | `string` | Path to zip folder for Minecraft server can be in s3 or local If this is not set then the serverInstallScript must be! |
 
 ---
 
@@ -438,18 +450,6 @@ public readonly gameServerName: string;
 - *Type:* `string`
 
 Name for Minecraft server.
-
----
-
-##### `serverZipPath`<sup>Required</sup> <a name="cdk-minecraft-server.MinecraftServerProps.property.serverZipPath" id="cdkminecraftserverminecraftserverpropspropertyserverzippath"></a>
-
-```typescript
-public readonly serverZipPath: string;
-```
-
-- *Type:* `string`
-
-Path to zip folder for Minecraft server can be in s3 or local.
 
 ---
 
@@ -528,6 +528,20 @@ The ec2 instance size for hosting the minecraft server.
 
 ---
 
+##### `serverInstallScript`<sup>Optional</sup> <a name="cdk-minecraft-server.MinecraftServerProps.property.serverInstallScript" id="cdkminecraftserverminecraftserverpropspropertyserverinstallscript"></a>
+
+```typescript
+public readonly serverInstallScript: string;
+```
+
+- *Type:* `string`
+
+Path to server install script.
+
+If this is not set then the serverZipPath must be!
+
+---
+
 ##### `serverManagementAPI`<sup>Optional</sup> <a name="cdk-minecraft-server.MinecraftServerProps.property.serverManagementAPI" id="cdkminecraftserverminecraftserverpropspropertyservermanagementapi"></a>
 
 ```typescript
@@ -540,6 +554,18 @@ public readonly serverManagementAPI: boolean;
 Whether or not the server management API should be created as part of the deployment.
 
 The server api will allow you to do things such as start and stop your ec2 instance
+
+---
+
+##### `serverZipPath`<sup>Optional</sup> <a name="cdk-minecraft-server.MinecraftServerProps.property.serverZipPath" id="cdkminecraftserverminecraftserverpropspropertyserverzippath"></a>
+
+```typescript
+public readonly serverZipPath: string;
+```
+
+- *Type:* `string`
+
+Path to zip folder for Minecraft server can be in s3 or local If this is not set then the serverInstallScript must be!
 
 ---
 
@@ -559,12 +585,13 @@ const serverInstanceProps: ServerInstanceProps = { ... }
 | --- | --- | --- |
 | [`ec2InstanceName`](#cdkminecraftserverserverinstancepropspropertyec2instancename)<span title="Required">*</span> | `string` | *No description.* |
 | [`gameServerName`](#cdkminecraftserverserverinstancepropspropertygameservername)<span title="Required">*</span> | `string` | *No description.* |
-| [`serverZipPath`](#cdkminecraftserverserverinstancepropspropertyserverzippath)<span title="Required">*</span> | `string` | *No description.* |
 | [`vpc`](#cdkminecraftserverserverinstancepropspropertyvpc)<span title="Required">*</span> | [`@aws-cdk/aws-ec2.IVpc`](#@aws-cdk/aws-ec2.IVpc) | *No description.* |
 | [`additionalSecurityGroups`](#cdkminecraftserverserverinstancepropspropertyadditionalsecuritygroups) | [`@aws-cdk/aws-ec2.ISecurityGroup`](#@aws-cdk/aws-ec2.ISecurityGroup)[] | *No description.* |
 | [`customUserDataScript`](#cdkminecraftserverserverinstancepropspropertycustomuserdatascript) | [`@aws-cdk/aws-ec2.UserData`](#@aws-cdk/aws-ec2.UserData) | *No description.* |
 | [`ec2InstanceClass`](#cdkminecraftserverserverinstancepropspropertyec2instanceclass) | [`@aws-cdk/aws-ec2.InstanceClass`](#@aws-cdk/aws-ec2.InstanceClass) | *No description.* |
 | [`ec2InstanceSize`](#cdkminecraftserverserverinstancepropspropertyec2instancesize) | [`@aws-cdk/aws-ec2.InstanceSize`](#@aws-cdk/aws-ec2.InstanceSize) | *No description.* |
+| [`serverInstallScript`](#cdkminecraftserverserverinstancepropspropertyserverinstallscript) | `string` | *No description.* |
+| [`serverZipPath`](#cdkminecraftserverserverinstancepropspropertyserverzippath) | `string` | *No description.* |
 
 ---
 
@@ -582,16 +609,6 @@ public readonly ec2InstanceName: string;
 
 ```typescript
 public readonly gameServerName: string;
-```
-
-- *Type:* `string`
-
----
-
-##### `serverZipPath`<sup>Required</sup> <a name="cdk-minecraft-server.ServerInstanceProps.property.serverZipPath" id="cdkminecraftserverserverinstancepropspropertyserverzippath"></a>
-
-```typescript
-public readonly serverZipPath: string;
 ```
 
 - *Type:* `string`
@@ -645,6 +662,26 @@ public readonly ec2InstanceSize: InstanceSize;
 ```
 
 - *Type:* [`@aws-cdk/aws-ec2.InstanceSize`](#@aws-cdk/aws-ec2.InstanceSize)
+
+---
+
+##### `serverInstallScript`<sup>Optional</sup> <a name="cdk-minecraft-server.ServerInstanceProps.property.serverInstallScript" id="cdkminecraftserverserverinstancepropspropertyserverinstallscript"></a>
+
+```typescript
+public readonly serverInstallScript: string;
+```
+
+- *Type:* `string`
+
+---
+
+##### `serverZipPath`<sup>Optional</sup> <a name="cdk-minecraft-server.ServerInstanceProps.property.serverZipPath" id="cdkminecraftserverserverinstancepropspropertyserverzippath"></a>
+
+```typescript
+public readonly serverZipPath: string;
+```
+
+- *Type:* `string`
 
 ---
 
