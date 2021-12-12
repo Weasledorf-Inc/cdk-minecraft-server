@@ -1,5 +1,7 @@
 # CDK Minecraft Server
 
+**Please advise this library is still a work in progress and pre 1.0**
+
 Create an AWS hosted Minecraft server quick and easy within minutes!!
 
 ## Getting Started
